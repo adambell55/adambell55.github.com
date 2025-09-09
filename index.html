@@ -15,9 +15,6 @@
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-
-
-
     <style>
         /* Root CSS Variables for Theming */
         :root {
@@ -644,18 +641,17 @@
             .mini-journal-item .download-button { bottom: 60px; font-size: 0.85rem; padding: 0.6rem 1.2rem; }
             #free-mini-journal h2::before { background-position: 95% center; }
         }
+       
+        /* Styles for the iFrame Container in the modal */
+        .brevo-iframe-container {
+            position: relative;
+            width: 100%;
+            max-width: 540px;
+            height: 420px; /* Increased height for better fit */
+            background-color: #fff;
+            border-radius: 10px;
+        }
     </style>
-    <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
-    <script>
-        // Version: 2.0
-        window.Brevo = window.Brevo || [];
-        Brevo.push([
-            "init",
-            {
-            client_key: "87qcrhv28e641mrbcwd8ooic"
-            }
-        ]);
-    </script>
 </head>
 <body>
     <!-- Hero Section -->
@@ -720,17 +716,17 @@
                 <div class="mini-journals-grid">
                     <div class="mini-journal-item">
                         <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755950640/True_Grit_Mini_Journal_1_2_bts11t.png" alt="Inner Wealth Mini Journal" class="mini-journal-image">
-                        <a href="#" class="download-button">Download</a>
+                        <button onclick="document.getElementById('brevo-modal-wealth').style.display='flex'" class="download-button">Download</button>
                         <p>Activate abundance, align your beliefs and train your subconscious</p>
                     </div>
                     <div class="mini-journal-item">
                         <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755950608/True_Grit_Mini_Journal_1_4_dyozo7.png" alt="True Grit Mini Journal" class="mini-journal-image">
-                        <a href="#" class="download-button">Download</a>
+                        <button onclick="document.getElementById('brevo-modal-grit').style.display='flex'" class="download-button">Download</button>
                         <p>Tap into perseverance, vision, and the lessons hidden in failure</p>
                     </div>
                     <div class="mini-journal-item">
                         <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755950624/True_Grit_Mini_Journal_1_3_urky7e.png" alt="Steady Strength Mini Journal" class="mini-journal-image">
-                        <a href="#" class="download-button">Download</a>
+                        <button onclick="document.getElementById('brevo-modal-strength').style.display='flex'" class="download-button">Download</button>
                         <p>Build confidence through discipline, gratitude, and self-worth</p>
                     </div>
                 </div>
@@ -788,29 +784,44 @@
         </div>
     </div>
    
-    <!--
-    !!! PASTE YOUR BREVO FORM CODE HERE !!!
-    Go to your Brevo account, create your popup form, and copy the HTML/script snippet.
-    Paste that entire snippet right here, just before the closing </body> tag.
-    -->
+    <!-- START: Hidden Brevo Form Modals -->
 
+    <!-- Modal 1: Inner Wealth -->
+    <div id="brevo-modal-wealth" class="modal">
+        <div class="brevo-iframe-container">
+            <span onclick="document.getElementById('brevo-modal-wealth').style.display='none'" style="position:absolute; top:-15px; right:-15px; cursor:pointer; font-size:35px; color:white; line-height:1; z-index:1001; text-shadow: 0 0 5px black;">&times;</span>
+            <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFAMBsD7B-0uxgd6oX2l7wjm4Qd9K453kBCvNulckalFN96BCp7K63Ht4SDexqz6aSR9gzmqyFpHMeK1wIhImRriF1-YdkuLqMbrofZ2CV9da0i3-olgQhuYGYUoNAk2ydPmq_ZlsM3CAC2xxVSOP0eRlc4a_tTweD0H0HygIwWqUkaKxDpsMlBBSSAgWK_4HkikPw5JAF9pEN" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
+        </div>
+    </div>
+
+    <!-- Modal 2: True Grit -->
+    <div id="brevo-modal-grit" class="modal">
+        <div class="brevo-iframe-container">
+            <span onclick="document.getElementById('brevo-modal-grit').style.display='none'" style="position:absolute; top:-15px; right:-15px; cursor:pointer; font-size:35px; color:white; line-height:1; z-index:1001; text-shadow: 0 0 5px black;">&times;</span>
+            <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFAF8N7xcE7uB_3n_JLUMJ9Ut_nDwtnEEPzIq2dtJJ0nOqzqzU_-T4n7CbreU3yows5Y8viGXNP3Ll7-dv3SJp1cJ51gYHJ0TTauN_HmjqgpUkb2cSAhpKW_wvZLqO1TpsqkzFhV3Yevm-V10frsg08Yasel0t5WlSt22b8HmCN5rLoYruEu6NapCmpnd2hLEN2p87BYkIlFb3" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
+        </div>
+    </div>
+
+    <!-- Modal 3: Steady Strength -->
+    <div id="brevo-modal-strength" class="modal">
+        <div class="brevo-iframe-container">
+             <span onclick="document.getElementById('brevo-modal-strength').style.display='none'" style="position:absolute; top:-15px; right:-15px; cursor:pointer; font-size:35px; color:white; line-height:1; z-index:1001; text-shadow: 0 0 5px black;">&times;</span>
+             <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFADlTe_tU6XADftQtFpJFfp838NIB8LXtfSAdl7hnelUTdRBiuHU8KjNyoU3XwYaClW74xXye8H7TkdqSFpMpPMmcpbBn3MKxk6wPu3iEnj0XjgSyRdYev54KUx1Cp2jiV1AqYaxzwkzlfWwA7t0qXJTnjizos5bA3jeTPqRV6oHhcSZPCe3HyUIB8QTuPDyq1dKUVqR3GYnw" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
+        </div>
+    </div>
+   
     <!-- JavaScript for smooth scrolling and modal functionality -->
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                // Keep default behavior for external links or the Brevo form trigger
-                if (this.getAttribute('href') === '#') {
-                     // This allows the Brevo form trigger to work if it relies on a simple '#' link
-                } else {
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
@@ -820,13 +831,17 @@
             const heroSection = document.querySelector('.hero');
             heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${imageUrl}')`;
         }
-
         changeBackgroundImage('https://res.cloudinary.com/djttn4xvk/image/upload/v1756052349/image_2025-08-24_171904342_ducs9l.png');
 
-        // Contact Modal Logic
+        // Modal Logic
         const contactUsLink = document.getElementById('contact-us-link');
         const contactModal = document.getElementById('contact-modal');
         const closeModalButton = document.getElementById('close-modal');
+       
+        // Get all three Brevo modals
+        const brevoModalWealth = document.getElementById('brevo-modal-wealth');
+        const brevoModalGrit = document.getElementById('brevo-modal-grit');
+        const brevoModalStrength = document.getElementById('brevo-modal-strength');
 
         contactUsLink.addEventListener('click', function(e) {
             e.preventDefault();
@@ -837,9 +852,19 @@
             contactModal.style.display = 'none';
         });
 
+        // Close modals when clicking on the background overlay
         window.addEventListener('click', function(event) {
             if (event.target === contactModal) {
                 contactModal.style.display = 'none';
+            }
+            if (event.target === brevoModalWealth) {
+                brevoModalWealth.style.display = 'none';
+            }
+            if (event.target === brevoModalGrit) {
+                brevoModalGrit.style.display = 'none';
+            }
+            if (event.target === brevoModalStrength) {
+                brevoModalStrength.style.display = 'none';
             }
         });
     </script>

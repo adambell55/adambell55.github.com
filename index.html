@@ -10,7 +10,7 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -455,7 +455,7 @@
 
         .mini-journal-item .download-button {
             position: absolute;
-            bottom: 150px;
+            bottom: 28%;
             left: 50%;
             transform: translateX(-50%);
             opacity: 1;
@@ -473,7 +473,7 @@
             white-space: nowrap;
             z-index: 2;
             box-shadow: 0 4px 10px var(--shadow-strong);
-            text-decoration: none; /* Added for 'a' tag */
+            text-decoration: none;
         }
 
         .mini-journal-item .download-button:hover {
@@ -615,7 +615,6 @@
             .mini-journal-item { max-width: 320px; margin: 0 auto; }
             .mini-journal-image { max-width: 280px; }
             .mini-journal-item:hover { transform: translateY(-10px); animation: none; box-shadow: 0 10px 30px var(--shadow-medium); }
-            .mini-journal-item .download-button { bottom: 50px; }
             .author-content { flex-direction: column; align-items: center; }
             .author-text { text-align: center; }
             #how-it-works h2, #free-mini-journal h2 { padding-top: 5rem; padding-bottom: 5rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
@@ -625,7 +624,6 @@
         @media (min-width: 768px) {
             .author-content { flex-direction: row; text-align: left; align-items: flex-start; }
             .author-text { text-align: left; }
-            .mini-journal-item .download-button { bottom: 150px; }
         }
 
         @media (max-width: 480px) {
@@ -638,7 +636,6 @@
             .journal-intro-paragraph, .section-intro, .author-text p { font-size: 1rem; margin-bottom: 1.5rem; }
             .container { padding: 0 1rem; }
             .content-section { padding: 3rem 0; }
-            .mini-journal-item .download-button { bottom: 60px; font-size: 0.85rem; padding: 0.6rem 1.2rem; }
             #free-mini-journal h2::before { background-position: 95% center; }
         }
        
@@ -647,7 +644,7 @@
             position: relative;
             width: 100%;
             max-width: 540px;
-            height: 420px; /* Increased height for better fit */
+            height: 420px;
             background-color: #fff;
             border-radius: 10px;
         }
@@ -737,6 +734,14 @@
         <section id="about-author" class="content-section">
             <div class="container">
                 <h2>About the Author</h2>
+
+                <!-- === START: NEW IMAGE ADDED HERE === -->
+                <div class="journal-image-middle-container">
+                    <!-- IMPORTANT: Replace the src below with the link to your new image -->
+                    <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1756069419/New_Project_3_ldhk5w.png" alt="The MasterMinds Journal" class="journal-book-image-centered">
+                </div>
+                <!-- === END: NEW IMAGE ADDED HERE === -->
+
                 <div class="author-content">
                     <div class="author-image-wrapper">
                         <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1756049082/image_upscaled_1_dshr8i.png" alt="Author Image" class="author-photo">

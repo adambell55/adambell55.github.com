@@ -1,98 +1,875 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MasterMinds Journals</title>
-  <style>
-    /* Modal background */
-    .brevo-modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background-color: rgba(0,0,0,0.5);
-      justify-content: center;
-      align-items: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Master Minds Project - Pathways to Personal Power</title>
 
-    /* Modal content container */
-    .brevo-iframe-container {
-      position: relative;
-      width: 100%;
-      max-width: 540px;
-      height: 80vh; /* responsive height */
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-    }
+    <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/djttn4xvk/image/upload/v1755853896/MM_Website_Mock_Up_1_pe7jcb.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/djttn4xvk/image/upload/v1755853896/MM_Website_Mock_Up_1_pe7jcb.png">
 
-    .brevo-iframe-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    /* Close button */
-    .brevo-close {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-      cursor: pointer;
-      background: transparent;
-      border: none;
-    }
+    <style>
+        /* Root CSS Variables for Theming */
+        :root {
+            /* Light Theme Colors */
+            --primary-purple: #3a2367;
+            --primary-gold: #FFD700;
+            --secondary-gold: #ffbe29;
+            --text-dark: #333;
+            --text-light: #555;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --nav-bg: var(--secondary-gold);
+            --footer-bg: #2C3E50;
+            --footer-text: #ffffff;
+            --border-color: #ddd;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --shadow-strong: rgba(0, 0, 0, 0.2);
+            --button-hover-bg: #a89030; /* Slightly darker gold */
+            --button-dark-hover-bg: #5D3FD3; /* Lighter purple for dark button hover */
+            --button-dark-hover-text: #FFF;
+            --contrast-border: #FFD700;
+        }
 
-    .brevo-close:focus {
-      outline: 2px solid #007bff;
-    }
-  </style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
+            box-shadow: inset 0 0 25px rgba(0,0,0,0.06);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://res.cloudinary.com/djttn4xvk/image/upload/v1755782183/photo-1506905925346-21bda4d32df4_zst8p5.avif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-section {
+            text-align: center;
+        }
+
+        .company-logo {
+            max-width: 1200px;
+            max-height: 1200px;
+            width: 100%;
+            height: auto;
+            transform: scale(1.05);
+            margin-bottom: 1rem;
+            margin-left: 3rem;
+            filter: drop-shadow(2px 2px 4px var(--shadow-strong));
+            transition: transform 0.3s ease;
+        }
+
+        .company-logo:hover {
+            transform: scale(1.09);
+        }
+
+        /* Navigation Banner */
+        .nav-banner {
+            width: 100%;
+            background: var(--nav-bg);
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 4px 10px var(--shadow-light);
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-item {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(0.8rem, 2vw, 1.1rem);
+            font-weight: 600;
+            color: var(--footer-bg);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-item:hover {
+            background: var(--primary-purple);
+            transform: translateY(-2px);
+            color: var(--primary-gold);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 5rem 0;
+            background: var(--bg-white);
+            transition: background-color 0.3s ease, border-top 0.3s ease;
+            border-top: 1px solid transparent;
+            position: relative;
+        }
+
+        .content-section.alternate {
+            background: var(--bg-light);
+        }
+
+        .content-section:not(:first-of-type) {
+            border-image: linear-gradient(to right, transparent, var(--border-color), transparent) 1;
+            border-top: 1px solid;
+        }
+
+        .content-section h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--primary-purple);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-shadow: 1px 1px 2px var(--shadow-light);
+        }
+
+        #how-it-works h2 {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://res.cloudinary.com/djttn4xvk/image/upload/v1755985142/image_2025-08-23_223846314_rjc7tr.png');
+            background-attachment: fixed;
+            color: var(--bg-white);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            margin-bottom: 4rem;
+            padding-top: 9rem;
+            padding-bottom: 9rem;
+        }
+
+        .section-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-content > p {
+            font-size: 1.2rem;
+            text-align: left;
+            margin-bottom: 3rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+       
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow-medium);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--shadow-medium);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gold);
+            color: var(--footer-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 3px 10px var(--shadow-light);
+        }
+
+        .step-number i {
+            color: var(--footer-bg);
+        }
+
+        .step h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary-purple);
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-logo h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--footer-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+        }
+
+        /* Journal Section Specific Styles */
+        .journal-hero-section {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            background-color: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .journal-hero-section .main-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--primary-purple);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-shadow: 2px 2px 4px var(--shadow-light);
+        }
+
+        .journal-hero-section .tagline-one-page {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: var(--primary-gold);
+            margin-bottom: 3rem;
+            text-shadow: 1px 1px 2px var(--shadow-medium);
+        }
+
+        .journal-intro-paragraph {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 940px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .journal-image-middle-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .journal-book-image-centered {
+            max-width: 600px;
+            height: auto;
+            display: block;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            filter: drop-shadow(5px 10px 15px var(--shadow-medium));
+        }
+
+        /*.journal-book-image-centered:hover {
+            transform: translateY(-50px);
+        }*/
+
+        .order-now-button-centered {
+            background: var(--primary-purple);
+            color: var(--primary-gold);
+            border: 2px solid var(--contrast-border);
+            padding: 1.2rem 3rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.08em;
+            box-shadow: 0 5px 15px var(--shadow-medium);
+            margin-top: 1rem;
+        }
+
+        .order-now-button-centered:hover {
+            background: var(--button-dark-hover-bg);
+            color: var(--button-dark-hover-text);
+            border-color: var(--button-dark-hover-text);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--shadow-strong);
+        }
+
+        /* Mini Journal Grid Styles */
+        .section-intro {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .mini-journals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        #free-mini-journal h2 {
+            color: var(--bg-white);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            margin-bottom: 4rem;
+            padding-top: 9rem;
+            padding-bottom: 9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        #free-mini-journal h2::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://res.cloudinary.com/djttn4xvk/image/upload/v1756052249/image_2025-08-24_171715893_zal7zh.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            transform: scaleX(-1);
+        }
+
+        .mini-journal-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 0;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-align: center;
+        }
+
+        /*@keyframes pulse-outline {
+            0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+            50% { box-shadow: 0 0 0 12px rgba(255, 215, 0, 0.5); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+        }*/
+
+        /*.mini-journal-item:hover {
+            /*transform: translateY(-20px);
+            animation: pulse-outline 1.8s infinite ease-in-out;
+        }*/
+
+        .mini-journal-image {
+            width: 100%;
+            max-width: 750px;
+            height: auto;
+            display: block;
+            border-radius: 0;
+            box-shadow: none;
+            margin-bottom: 0;
+        }
+
+        .mini-journal-item .download-button {
+            position: absolute;
+            bottom: 28%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 1;
+            visibility: visible;
+            background: var(--primary-purple);
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            z-index: 2;
+            box-shadow: 0 4px 10px var(--shadow-strong);
+            text-decoration: none;
+        }
+
+        .mini-journal-item .download-button:hover {
+            background: var(--button-dark-hover-bg);
+            color: var(--button-dark-hover-text);
+            border-color: var(--button-dark-hover-text);
+            box-shadow: 0 6px 15px var(--shadow-strong);
+        }
+
+        /* About Author Section Styles */
+        .author-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-image-wrapper {
+            flex-shrink: 0;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 8px 25px var(--shadow-medium);
+            border: 5px solid var(--primary-gold);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .author-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .author-text {
+            flex: 1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .author-text p:last-of-type {
+            margin-bottom: 0;
+        }
+       
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--bg-white);
+            margin: auto;
+            padding: 2.5rem;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px var(--shadow-strong);
+            position: relative;
+            text-align: center;
+            color: var(--text-dark);
+            animation: fadeInScale 0.3s ease-out forwards;
+        }
+       
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-purple);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .modal-content .contact-email a {
+            color: var(--primary-gold);
+            font-weight: 600;
+            text-decoration: underline;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .modal-content .contact-email a:hover {
+            color: var(--primary-purple);
+        }
+
+        .close-button {
+            color: var(--text-dark);
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: var(--primary-purple);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .journal-book-image-centered { max-width: 380px; }
+            .mini-journal-image { max-width: 300px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-banner { flex-direction: column; gap: 1rem; padding-bottom: 1.5rem; }
+            .journal-book-image-centered { max-width: 550px; transform: translateY(0) !important; filter: none !important; }
+            .journal-book-image-centered:hover { transform: translateY(0); }
+            .order-now-button-centered { align-self: center; }
+            .mini-journals-grid { grid-template-columns: 1fr; }
+            .mini-journal-item { max-width: 320px; margin: 0 auto; }
+            .mini-journal-image { max-width: 280px; }
+            .mini-journal-item:hover { transform: translateY(-10px); animation: none; box-shadow: 0 10px 30px var(--shadow-medium); }
+            .author-content { flex-direction: column; align-items: center; }
+            .author-text { text-align: center; }
+            #how-it-works h2, #free-mini-journal h2 { padding-top: 5rem; padding-bottom: 5rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+            #free-mini-journal h2::before { background-position: right center; }
+        }
+
+        @media (min-width: 768px) {
+            .author-content { flex-direction: row; text-align: left; align-items: flex-start; }
+            .author-text { text-align: left; }
+        }
+
+        @media (max-width: 480px) {
+            .company-logo { max-width: 250px; margin-left: 0; }
+            .nav-item { font-size: 0.9rem; padding: 0.4rem 0.8rem; }
+            .journal-book-image-centered { max-width: 220px; }
+            .order-now-button-centered { padding: 1rem 2rem; font-size: 1rem; }
+            .mini-journal-image { max-width: 220px; }
+            .content-section h2 { font-size: 2rem; margin-bottom: 2rem; }
+            .journal-intro-paragraph, .section-intro, .author-text p { font-size: 1rem; margin-bottom: 1.5rem; }
+            .container { padding: 0 1rem; }
+            .content-section { padding: 3rem 0; }
+            #free-mini-journal h2::before { background-position: 95% center; }
+        }
+       
+        /* Styles for the iFrame Container in the modal */
+        .brevo-iframe-container {
+            position: relative;
+            width: 100%;
+            max-width: 540px;
+            height: 420px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-  <!-- Example button to open Wealth Journal modal -->
-  <button onclick="openModal('brevo-modal-wealth')">Download Wealth Journal</button>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="logo-section">
+                <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755782363/Untitled_design__2_-removebg-preview_upscaled_2_julhfx.png" alt="The Master Minds Project Logo" class="company-logo">
+            </div>
+        </div>
+       
+        <!-- Navigation Banner -->
+        <nav class="nav-banner">
+            <a href="#journal" class="nav-item">THE JOURNAL</a>
+            <a href="#how-it-works" class="nav-item">HOW IT WORKS</a>
+            <a href="#free-mini-journal" class="nav-item">FREE MINI JOURNAL</a>
+            <a href="#about-author" class="nav-item">ABOUT THE AUTHOR</a>
+        </nav>
+    </section>
 
-  <!-- Wealth Journal Modal -->
-  <div id="brevo-modal-wealth" class="brevo-modal" role="dialog" aria-modal="true">
-    <div class="brevo-iframe-container">
-      <button class="brevo-close" onclick="closeModal('brevo-modal-wealth')" aria-label="Close modal" tabindex="0">&times;</button>
-      <iframe src="https://1234567890abcdef.sibforms.com/serve/MUIE..." title="Wealth Journal Signup Form"></iframe>
+    <!-- Main Content Sections -->
+    <main>
+        <!-- Journal Section -->
+        <section id="journal" class="content-section journal-hero-section">
+            <div class="container">
+                <h2 class="main-title">UNLOCK YOUR POTENTIAL</h2>
+                <p class="tagline-one-page">One page at a time...</p>
+                <p class="journal-intro-paragraph">For those seeking a mindset reboot but feeling stuck or demotivated, this unique journal is your catalyst to gain clarity, take action, and ignite meaningful, lasting change — guided by timeless wisdom from inspirational masters of mind, body, and soul.</p>
+                <div class="journal-image-middle-container">
+                    <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1756069419/New_Project_3_ldhk5w.png" alt="The Ultimate Mindset Transformation Journal" class="journal-book-image-centered">
+                </div>
+                <button class="order-now-button-centered">ORDER NOW</button>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="content-section alternate">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="section-content">
+                 
+
+                       
+                    <p>The MasterMinds Ultimate Mindset Transformation Journal is more than just a collection of inspiring quotes — it's a companion in your search for personal growth and lasting change, designed to help you unlock your potential, one page at a time...</p>
+                        <div class="journal-image-middle-container">
+                            <img src="openbook.png" alt="The Ultimate Mindset Transformation Journal" class="journal-book-image-centered">
+                        </div>
+                    <p>Whether you are navigating a challenging life experience, seeking a mindset reboot or simply wanting to start living a more intentional life, discover how this unique journal can guide you towards meaningful, lasting change.</p>
+                    <p>This unique journal draws on the timeless wisdom of thought leaders, philosophers, scientists, sports people, visionaries, creatives and more.</p>
+                    <div class="process-steps">
+                        <div class="step"><div class="step-number"><i class="fas fa-magnifying-glass"></i></div><h3>Discover</h3><p>Choose a growth principle or inspirational figure</p></div>
+                        <div class="step"><div class="step-number"><i class="fas fa-quote-left"></i></div><h3>Inspire</h3><p>Gain wisdom through meaningful quotes</p></div>
+                        <div class="step"><div class="step-number"><i class="fas fa-tree"></i></div><h3>Experience</h3><p>Engage with powerful life stories</p></div>
+                        <div class="step"><div class="step-number"><i class="fas fa-lightbulb"></i></div><h3>Reflection</h3><p>Ponder on thought provoking insights</p></div>
+                        <div class="step"><div class="step-number"><i class="fas fa-pen-alt"></i></div><h3>Answer</h3><p>Respond to deep journal prompts</p></div>
+                        <div class="step"><div class="step-number"><i class="fas fa-clapperboard"></i></div><h3>Action</h3><p>Take action and grow at your own pace</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Free Mini Journal Section -->
+        <section id="free-mini-journal" class="content-section alternate">
+            <div class="container">
+                <h2>Free Mini Journals</h2>
+                <p class="section-intro">No hype, no fluff — just timeless wisdom and meaningful, lasting change.</p>
+                <h3 class="section-intro">PLEASE FEEL FREE TO DOWNLOAD ONE OF OUR MINI JOURNALS BELOW</h3>
+
+                <div class="mini-journals-grid">
+                    <div class="mini-journal-item">
+                        <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755950640/True_Grit_Mini_Journal_1_2_bts11t.png" alt="Inner Wealth Mini Journal" class="mini-journal-image">
+                        <button onclick="document.getElementById('brevo-modal-wealth').style.display='flex'" class="download-button">Download</button>
+                        <p>Activate abundance, align your beliefs and train your subconscious</p>
+                    </div>
+                    <div class="mini-journal-item">
+                        <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755950608/True_Grit_Mini_Journal_1_4_dyozo7.png" alt="True Grit Mini Journal" class="mini-journal-image">
+                        <button onclick="document.getElementById('brevo-modal-grit').style.display='flex'" class="download-button">Download</button>
+                        <p>Tap into perseverance, vision, and the lessons hidden in failure</p>
+                    </div>
+                    <div class="mini-journal-item">
+                        <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755950624/True_Grit_Mini_Journal_1_3_urky7e.png" alt="Steady Strength Mini Journal" class="mini-journal-image">
+                        <button onclick="document.getElementById('brevo-modal-strength').style.display='flex'" class="download-button">Download</button>
+                        <p>Build confidence through discipline, gratitude, and self-worth</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Author Section -->
+        <section id="about-author" class="content-section">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="author-content">
+                    <div class="author-image-wrapper">
+                        <img src="https://res.cloudinary.com/djttn4xvk/image/upload/c_crop,ar_1:1/v1757840935/image_2025-09-14_100845446_yi54ly.png" alt="Author Image" class="author-photo">
+                    </div>
+                    <div class="author-text">
+                        <p>Hi, I’m Adam Bell. I’ve always been deeply fascinated by the journey of personal growth, having  spent the last 30 years helping people, teams, and organisations grow themselves through leadership, coaching, and strategic development — both in the private and non-profit sectors.</p>
+                        <br><p>As a student of self -development, I am passionate about building and maintaining a growth mindset, living intentionally, and consistently doing the inner work I need to do to maintain a positive and prodcutive mindest, even through tough and challenging times. Focussing on the application of what I was learning and taking the necessary actions, has helped me radically change my mindset for the better. I’m happier and calmer; I am more patient; I have greater resiliency, deeper focus, stronger determination, and greater faith and confidence than I ever have had.</p>
+
+                        <br><p>So, as a way to help everyday people like myself, to create their own lasting change, I created MasterMinds: The Ultimate Mindset Transformation Journal as a way to make timeless wisdom accessible, practical, affordable, personal, and actionable - no hype, no shortcuts, just meaningful, sustainable, real-world growth. When I’m not writing or trying to make people laugh, I work in healthcare and love nothing more than spending quality time with my family and doing my best everday living by the principles I’m sharing with you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>The Master Minds Project</h3>
+                    <p>Pathways to Personal Power</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#contact" id="contact-us-link">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Master Minds Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Popup Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-modal">&times;</span>
+            <h3>Contact Us</h3>
+            <p>For inquiries, please reach out to us at:</p>
+            <p class="contact-email">
+                <a href="mailto:hello@themastermindsproject.com">hello@themastermindsproject.com</a>
+            </p>
+            <p>We look forward to hearing from you!</p>
+        </div>
     </div>
-  </div>
+   
+    <!-- START: Hidden Brevo Form Modals -->
 
-  <!-- Grit Journal Modal -->
-  <div id="brevo-modal-grit" class="brevo-modal" role="dialog" aria-modal="true">
-    <div class="brevo-iframe-container">
-      <button class="brevo-close" onclick="closeModal('brevo-modal-grit')" aria-label="Close modal" tabindex="0">&times;</button>
-      <iframe src="https://1234567890abcdef.sibforms.com/serve/MUIF..." title="Grit Journal Signup Form"></iframe>
+    <!-- Modal 1: Inner Wealth -->
+    <div id="brevo-modal-wealth" class="modal">
+        <div class="brevo-iframe-container">
+            <span onclick="document.getElementById('brevo-modal-wealth').style.display='none'" style="position:absolute; top:-15px; right:-15px; cursor:pointer; font-size:35px; color:white; line-height:1; z-index:1001; text-shadow: 0 0 5px black;">&times;</span>
+            <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFAN5atUAks6phopvOKFov1S-1X5QbuOawSaPdP1R2-7oyDb3BflrdJgzCG6NcBI-cKec9erUKBTBcsMWkMadqE1iqC2QwnR2YoBLrSq5kaZn7YCoFKbv3SUAA4JMwpND2RUI_YNC9bAVxfXNlkBZlXS8uUZ6HvM7ruVYRkp-fmwyFlvBiEGVejCpQbivMXmABI5nmaoLVluMB" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
+        </div>
     </div>
-  </div>
 
-  <!-- Strength Journal Modal -->
-  <div id="brevo-modal-strength" class="brevo-modal" role="dialog" aria-modal="true">
-    <div class="brevo-iframe-container">
-      <button class="brevo-close" onclick="closeModal('brevo-modal-strength')" aria-label="Close modal" tabindex="0">&times;</button>
-      <iframe src="https://1234567890abcdef.sibforms.com/serve/MUIG..." title="Strength Journal Signup Form"></iframe>
+    <!-- Modal 2: True Grit -->
+    <div id="brevo-modal-grit" class="modal">
+        <div class="brevo-iframe-container">
+            <span onclick="document.getElementById('brevo-modal-grit').style.display='none'" style="position:absolute; top:-15px; right:-15px; cursor:pointer; font-size:35px; color:white; line-height:1; z-index:1001; text-shadow: 0 0 5px black;">&times;</span>
+            <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFABX2x61-gCcSoyTOYJQSdPXzjGJQZHqa5_kW3Kzfh-H9YZC0hTsfICzGQqNkiyVdb5Cm6L3jGLUcojA7CcxSNkjJ2Rg70WmqSbQ9xp7zJnDjNOwJEJAH64ZFqxW1dvBkhLM-QJ6R73SNMKF6SbFg9lw1IQxV8ypD51lsSGoS09ug_EKd11AqBrNwI8t2UAeHROYZpIozyumL" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
+        </div>
     </div>
-  </div>
 
-  <script>
-    function openModal(id) {
-      document.getElementById(id).style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // lock background scroll
-    }
+    <!-- Modal 3: Steady Strength -->
+    <div id="brevo-modal-strength" class="modal">
+        <div class="brevo-iframe-container">
+             <span onclick="document.getElementById('brevo-modal-strength').style.display='none'" style="position:absolute; top:-15px; right:-15px; cursor:pointer; font-size:35px; color:white; line-height:1; z-index:1001; text-shadow: 0 0 5px black;">&times;</span>
+             <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFAJV7Ux3sxrvx9KF8-kkoOxo6QfQvFuiQUmVmRUf8X4Bjfcar4x90MU6cj3Oy2BU0GS9qqkh-fp7_iR-_z05Y0yxz5luHAlJZAqJIHdn3JfxZv3lytpob7vekf7PDSggOUYDUcullYa21MG-AR1iHuI9cPnOf7KguXYHhKZap5RC7hYeTqxPmayfoI1fIikQSWAHKdvsT0XWc" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
+        </div>
+    </div>
+   
+    <!-- JavaScript for smooth scrolling and modal functionality -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
-      document.body.style.overflow = ''; // unlock background scroll
-    }
-  </script>
+        // Function to change background image
+        function changeBackgroundImage(imageUrl) {
+            const heroSection = document.querySelector('.hero');
+            heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${imageUrl}')`;
+        }
+        changeBackgroundImage('https://res.cloudinary.com/djttn4xvk/image/upload/v1756052349/image_2025-08-24_171904342_ducs9l.png');
+
+        // Modal Logic
+        const contactUsLink = document.getElementById('contact-us-link');
+        const contactModal = document.getElementById('contact-modal');
+        const closeModalButton = document.getElementById('close-modal');
+       
+        // Get all three Brevo modals
+        const brevoModalWealth = document.getElementById('brevo-modal-wealth');
+        const brevoModalGrit = document.getElementById('brevo-modal-grit');
+        const brevoModalStrength = document.getElementById('brevo-modal-strength');
+
+        contactUsLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            contactModal.style.display = 'flex';
+        });
+
+        closeModalButton.addEventListener('click', function() {
+            contactModal.style.display = 'none';
+        });
+
+        // Close modals when clicking on the background overlay
+        window.addEventListener('click', function(event) {
+            if (event.target === contactModal) {
+                contactModal.style.display = 'none';
+            }
+            if (event.target === brevoModalWealth) {
+                brevoModalWealth.style.display = 'none';
+            }
+            if (event.target === brevoModalGrit) {
+                brevoModalGrit.style.display = 'none';
+            }
+            if (event.target === brevoModalStrength) {
+                brevoModalStrength.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

@@ -10,7 +10,7 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -18,7 +18,6 @@
     <style>
         /* Root CSS Variables for Theming */
         :root {
-            /* Light Theme Colors */
             --primary-purple: #3a2367;
             --primary-gold: #FFD700;
             --secondary-gold: #ffbe29;
@@ -347,10 +346,6 @@
             filter: drop-shadow(5px 10px 15px var(--shadow-medium));
         }
 
-        /*.journal-book-image-centered:hover {
-            transform: translateY(-50px);
-        }*/
-
         .order-now-button-centered {
             background: var(--primary-purple);
             color: var(--primary-gold);
@@ -432,17 +427,6 @@
             text-align: center;
         }
 
-        /*@keyframes pulse-outline {
-            0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
-            50% { box-shadow: 0 0 0 12px rgba(255, 215, 0, 0.5); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
-        }*/
-
-        /*.mini-journal-item:hover {
-            /*transform: translateY(-20px);
-            animation: pulse-outline 1.8s infinite ease-in-out;
-        }*/
-
         .mini-journal-image {
             width: 100%;
             max-width: 750px;
@@ -482,15 +466,30 @@
             border-color: var(--button-dark-hover-text);
             box-shadow: 0 6px 15px var(--shadow-strong);
         }
+       
+        /* UPDATED About Author Section Styles */
+        #about-author .container {
+             /* Remove the h2 from the general flow */
+            text-align: center;
+        }
 
-        /* About Author Section Styles */
+        .author-box {
+            background-color: var(--bg-white);
+            border: 3px solid var(--contrast-border);
+            border-radius: 15px; /* Softer corners */
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            max-width: 999px;
+            margin: 0 auto;
+            overflow: hidden; /* Important for containing elements */
+        }
+       
         .author-content {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
+            flex-direction: row; /* Default for desktop */
+            align-items: flex-start; /* Align items to the top */
+            gap: 2.5rem;
+            text-align: justify; /* Text aligns left */
         }
 
         .author-image-wrapper {
@@ -499,26 +498,33 @@
             height: 250px;
             border-radius: 50%;
             overflow: hidden;
-            box-shadow: 0 8px 25px var(--shadow-medium);
-            border: 5px solid var(--primary-gold);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            box-shadow: 0 5px 15px var(--shadow-medium);
+            margin-top: 250px; /* Pushes the image down */
         }
 
         .author-photo {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center top;
         }
 
         .author-text {
             flex: 1;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
+        .author-text h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
             color: var(--text-dark);
-            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .author-text p {
+            margin-bottom: 1.2rem;
         }
 
         .author-text p:last-of-type {
@@ -615,15 +621,15 @@
             .mini-journal-item { max-width: 320px; margin: 0 auto; }
             .mini-journal-image { max-width: 280px; }
             .mini-journal-item:hover { transform: translateY(-10px); animation: none; box-shadow: 0 10px 30px var(--shadow-medium); }
-            .author-content { flex-direction: column; align-items: center; }
+           
+            /* Author section responsive */
+            .author-box { padding: 1.5rem; }
+            .author-content { flex-direction: column; align-items: center; text-align: center; }
+            .author-image-wrapper { margin-top: 0; margin-bottom: 1rem; } /* Reset margin for stacked layout */
             .author-text { text-align: center; }
+
             #how-it-works h2, #free-mini-journal h2 { padding-top: 5rem; padding-bottom: 5rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
             #free-mini-journal h2::before { background-position: right center; }
-        }
-
-        @media (min-width: 768px) {
-            .author-content { flex-direction: row; text-align: left; align-items: flex-start; }
-            .author-text { text-align: left; }
         }
 
         @media (max-width: 480px) {
@@ -688,13 +694,7 @@
             <div class="container">
                 <h2>How It Works</h2>
                 <div class="section-content">
-                 
-
-                       
                     <p>The MasterMinds Ultimate Mindset Transformation Journal is more than just a collection of inspiring quotes — it's a companion in your search for personal growth and lasting change, designed to help you unlock your potential, one page at a time...</p>
-                        <div class="journal-image-middle-container">
-                            <img src="openbook.png" alt="The Ultimate Mindset Transformation Journal" class="journal-book-image-centered">
-                        </div>
                     <p>Whether you are navigating a challenging life experience, seeking a mindset reboot or simply wanting to start living a more intentional life, discover how this unique journal can guide you towards meaningful, lasting change.</p>
                     <p>This unique journal draws on the timeless wisdom of thought leaders, philosophers, scientists, sports people, visionaries, creatives and more.</p>
                     <div class="process-steps">
@@ -736,19 +736,22 @@
             </div>
         </section>
 
-        <!-- About Author Section -->
+        <!-- About Author Section - REPLACED CONTENT -->
         <section id="about-author" class="content-section">
             <div class="container">
-                <h2>About Me</h2>
-                <div class="author-content">
-                    <div class="author-image-wrapper">
-                        <img src="https://res.cloudinary.com/djttn4xvk/image/upload/c_crop,ar_1:1/v1757840935/image_2025-09-14_100845446_yi54ly.png" alt="Author Image" class="author-photo">
-                    </div>
-                    <div class="author-text">
-                        <p>Hi, I’m Adam Bell. I’ve always been deeply fascinated by the journey of personal growth, having  spent the last 30 years helping people, teams, and organisations grow themselves through leadership, coaching, and strategic development — both in the private and non-profit sectors.</p>
+                 <!-- The h2 title is now inside the author-text div for better layout control -->
+                <div class="author-box">
+                    <div class="author-content">
+                        <div class="author-image-wrapper">
+                            <img src="https://res.cloudinary.com/djttn4xvk/image/upload/c_crop,ar_1:1/v1757840935/image_2025-09-14_100845446_yi54ly.png" alt="Kerry Huggett" class="author-photo">
+                        </div>
+                        <div class="author-text">
+                            <h2>About Me</h2>
+                            <p>Hi, I’m Adam Bell. I’ve always been deeply fascinated by the journey of personal growth, having  spent the last 30 years helping people, teams, and organisations grow themselves through leadership, coaching, and strategic development — both in the private and non-profit sectors.</p>
                         <br><p>As a student of self -development, I am passionate about building and maintaining a growth mindset, living intentionally, and consistently doing the inner work I need to do to maintain a positive and prodcutive mindest, even through tough and challenging times. Focussing on the application of what I was learning and taking the necessary actions, has helped me radically change my mindset for the better. I’m happier and calmer; I am more patient; I have greater resiliency, deeper focus, stronger determination, and greater faith and confidence than I ever have had.</p>
 
                         <br><p>So, as a way to help everyday people like myself, to create their own lasting change, I created MasterMinds: The Ultimate Mindset Transformation Journal as a way to make timeless wisdom accessible, practical, affordable, personal, and actionable - no hype, no shortcuts, just meaningful, sustainable, real-world growth. When I’m not writing or trying to make people laugh, I work in healthcare and love nothing more than spending quality time with my family and doing my best everday living by the principles I’m sharing with you.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -793,7 +796,7 @@
     <div id="brevo-modal-wealth" class="modal">
         <div class="brevo-iframe-container">
             <span onclick="document.getElementById('brevo-modal-wealth').style.display='none'" style="position:absolute; top:-15px; right:-15px; cursor:pointer; font-size:35px; color:white; line-height:1; z-index:1001; text-shadow: 0 0 5px black;">&times;</span>
-            <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFAMcRNIX32yt3_dJKCc6xHQ2Sqge33ugBQj839pBDSQu5UUJ07R8we3Z72753n318D6eG-I7ZUiautn8GnJkBtJXbrlUb2ilkEkoY9sLgHLmbbD0kuWfcyaR7QpYfJWCBRAYwVQnSmFAlYSHus5x34bMv0VDHSbvqlFfXA-FkRlYavLAVOzIX9IFbeAKViDvyEBciY0XbsVf8" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
+            <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFAHDcBhfT52nQEsbnts5umj_UgMulAdcJzUCL1JNIrVD_0N_LHykwN8ZQ0LGvNPGg8bTE4E3i9jIAVh8zeWIYYyXXapbaZZRFtrCUcxSXSNoQvUywfhhpABLCIVXcqtS40uur5vXW2DczAF0r6xaXtZM9nRQ-95aImj637kRi-ortOaqe8h1sFDMwcT-pNxVVZHVViPfSoXqA" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
         </div>
     </div>
 
@@ -801,7 +804,7 @@
     <div id="brevo-modal-grit" class="modal">
         <div class="brevo-iframe-container">
             <span onclick="document.getElementById('brevo-modal-grit').style.display='none'" style="position:absolute; top:-15px; right:-15px; cursor:pointer; font-size:35px; color:white; line-height:1; z-index:1001; text-shadow: 0 0 5px black;">&times;</span>
-            <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFACiDt4t3wntGeBk2qMdBTmmRxZccnj8YTTQWXmrqxWhQfgE1L4EFcraWgylTDzSy93FA-7ohD7DnRzl2d8nU8TCeOtx0OC4Nlr5E0_bmCDtrs-3WSOw-YgjI4NHLXrdYAEMClhDKmbfx872mYEhgrp8RS2RpNqTAYGIc1iBEuV1FvubiGjinBt5A1_0yCkNE4wql1OCP8L8u" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
+            <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFANuCzBzTy_5qkkwxy4EpDCFYrTCrAzq3W-7xCxuqQjpy-a1Kp8a_L0T9LmTRa9JjXqWp-YmQeyE-rZxq_2CaIFjLeYqxlYtcJjbHBVDpRp1GOx_fDsoM08mP4P5fLX4Nq1WdcsEFTGDta9I0-sP0KGNj99ZX0ar-E2cX4JrFge0fIcRuYJFkyF-X4APl84zsZc90MULTflf7" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
         </div>
     </div>
 
@@ -809,7 +812,7 @@
     <div id="brevo-modal-strength" class="modal">
         <div class="brevo-iframe-container">
              <span onclick="document.getElementById('brevo-modal-strength').style.display='none'" style="position:absolute; top:-15px; right:-15px; cursor:pointer; font-size:35px; color:white; line-height:1; z-index:1001; text-shadow: 0 0 5px black;">&times;</span>
-             <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFALxEo_nFvkOGBmGYjHaalBWADA1fwvwBjwG2iT1trvZyHmUBSJV8gU-8xOtg3QFsFKj-BumeVDqqkbt8SyTYSdRAHsbqukGE8pygRFMiTWjMvjc2nvcmtQBbj3kArqc6Kxl5NmRGX8B5I7er8gBIqtCWPdFR6IvNrLQwtjrbWjxXwhCu8vfga3nTzjH8yN-LRznFKEjSjJgW" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
+             <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFAMLxaHFRpqMRkr0lli-kmZ6Bours0zNyEEtYf2sGEx_pvb3hPNmU00zQN_T8tFD0Rvqnrsc42o7LPzhKwfvzqCBbz5x0zbJF-q70v0by8XDjOGspG39AdFxR70ca73yO0bsvOBleR0NQvcoq52T0JjD6VcN634bpVeo0Bwb9t5si9Ty-fE_bjb-EmQRAbfJUg4oeO0MmZcPC" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
         </div>
     </div>
    

@@ -60,7 +60,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1500px;
             margin: 0 auto;
             padding: 0 2rem;
         }
@@ -333,13 +333,17 @@
         }
 
         .journal-image-middle-container {
-            display: flex;
+            display: flex; /* MODIFIED: Use flex to align images side-by-side */
             justify-content: center;
+            align-items: center; /* Vertically align images */
+            gap: 2rem; /* Space between the images */
+            flex-wrap: wrap; /* Allow images to stack on smaller screens */
             margin-bottom: 3rem;
         }
 
         .journal-book-image-centered {
-            max-width: 600px;
+            max-width: 900px; /* MODIFIED: Adjust width to fit two images */
+            min-width: 100px; /* Prevent images from becoming too small */
             height: auto;
             display: block;
             transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -482,9 +486,9 @@
             background-color: var(--bg-white);
             border: 0px solid var(--contrast-border);
             border-radius: 15px; /* Softer corners */
-            padding: 2.5rem;
+            padding: 3rem 4rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-            max-width: 999px;
+            max-width: 9000px; /* MODIFIED: Increased width for more space */
             margin: 0 auto;
             overflow: hidden; /* Important for containing elements */
         }
@@ -493,24 +497,25 @@
             display: flex;
             flex-direction: row; /* Default for desktop */
             align-items: flex-start; /* Align items to the top */
-            gap: 2.5rem;
+            gap: 3.5rem;
             text-align: justify; /* Text aligns left */
         }
 
+       
         .author-image-wrapper {
             flex-shrink: 0;
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
+            width: 400px;
+            border-radius: 50px;
+            align-self: stretch;
             overflow: hidden;
-            box-shadow: 0 5px 15px var(--shadow-medium);
-            margin-top: 250px; /* Pushes the image down */
+            margin-top: 0;
         }
 
         .author-photo {
             width: 100%;
             height: 100%;
             object-fit: cover;
+           
         }
 
         .author-text {
@@ -640,7 +645,7 @@
         @media (max-width: 480px) {
             .company-logo { max-width: 250px; margin-left: 0; }
             .nav-item { font-size: 0.9rem; padding: 0.4rem 0.8rem; }
-            .journal-book-image-centered { max-width: 220px; }
+            .journal-book-image-centered { max-width: 200px;}
             .order-now-button-centered { padding: 1rem 2rem; font-size: 1rem; }
             .mini-journal-image { max-width: 220px; }
             .content-section h2 { font-size: 2rem; margin-bottom: 2rem; }
@@ -688,7 +693,9 @@
                 <p class="tagline-one-page">One page at a time...</p>
                 <p class="journal-intro-paragraph">For those seeking a mindset reboot but feeling stuck or demotivated, this unique journal is your catalyst to gain clarity, take action, and ignite meaningful, lasting change — guided by timeless wisdom from inspirational masters of mind, body, and soul.</p>
                 <div class="journal-image-middle-container">
-                    <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1756069419/New_Project_3_ldhk5w.png" alt="The Ultimate Mindset Transformation Journal" class="journal-book-image-centered">
+                    <!-- ADDED a second image -->
+                    <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1760885595/Open_Book_Mockup_lp8qbn.png" class="journal-book-image-centered">
+                    <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1756069419/New_Project_3_ldhk5w.png" alt="The Ultimate Mindset Transformation Journal - Second View" class="journal-book-image-centered">
                 </div>
                 <button class="order-now-button-centered">ORDER NOW</button>
             </div>
@@ -748,7 +755,7 @@
                 <div class="author-box">
                     <div class="author-content">
                         <div class="author-image-wrapper">
-                            <img src="https://res.cloudinary.com/djttn4xvk/image/upload/c_crop,ar_1:1/v1757840935/image_2025-09-14_100845446_yi54ly.png" alt="Kerry Huggett" class="author-photo">
+                            <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1760873340/image_2025-10-18_164218970_skzzae.png" alt="Kerry Huggett" class="author-photo">
                         </div>
                         <div class="author-text">
                             <h2>About Me</h2>

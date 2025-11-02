@@ -23,10 +23,10 @@
             --secondary-gold: #ffbe29;
             --text-dark: #333;
             --text-light: #555;
-            --bg-light: #f8f9fa;
+            --bg-light: #ededee;
             --bg-white: #ffffff;
             --nav-bg: var(--secondary-gold);
-            --footer-bg: #2C3E50;
+            --footer-bg: var(--primary-purple);
             --footer-text: #ffffff;
             --border-color: #ddd;
             --shadow-light: rgba(0, 0, 0, 0.1);
@@ -288,7 +288,7 @@
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-light);
+            color: var(--footer-text);
         }
 
         /* Journal Section Specific Styles */
@@ -331,7 +331,18 @@
             margin-left: auto;
             margin-right: auto;
         }
-
+        .journal-hero-section .tagline-one-page {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: var(--primary-gold);
+    margin-bottom: 3rem;
+    text-shadow:
+        0 0 10px rgb(0, 41, 85),
+        0 0 20px rgb(0, 123, 255),
+        0 0 30px rgba(4, 0, 255, 0.4),
+        1px 1px 2px var(--shadow-medium);
+}
         .journal-image-middle-container {
             display: flex; /* MODIFIED: Use flex to align images side-by-side */
             justify-content: center;
@@ -342,7 +353,7 @@
         }
 
         .journal-book-image-centered {
-            max-width: 900px; /* MODIFIED: Adjust width to fit two images */
+            max-width: 700px; /* MODIFIED: Adjust width to fit two images */
             min-width: 100px; /* Prevent images from becoming too small */
             height: auto;
             display: block;
@@ -509,12 +520,14 @@
             align-self: stretch;
             overflow: hidden;
             margin-top: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .author-photo {
             width: 100%;
             height: 100%;
             object-fit: cover;
+
            
         }
 
@@ -679,8 +692,9 @@
         <nav class="nav-banner">
             <a href="#journal" class="nav-item">THE JOURNAL</a>
             <a href="#how-it-works" class="nav-item">HOW IT WORKS</a>
-            <a href="#free-mini-journal" class="nav-item">FREE MINI JOURNAL</a>
             <a href="#about-author" class="nav-item">ABOUT THE AUTHOR</a>
+            <a href="#free-mini-journal" class="nav-item">FREE MINI JOURNAL</a>
+
         </nav>
     </section>
 
@@ -710,11 +724,38 @@
                     <p>Whether you are navigating a challenging life experience, seeking a mindset reboot or simply wanting to start living a more intentional life, discover how this unique journal can guide you towards meaningful, lasting change, by drawing on the timeless wisdom of thought leaders, philosophers, scientists, sports people, visionaries and creatives.</p>
                     <div class="process-steps">
                         <div class="step"><div class="step-number"><i class="fas fa-magnifying-glass"></i></div><h3>Discover</h3><p>Choose a growth principle or inspirational figure</p></div>
-                        <div class="step"><div class="step-number"><i class="fas fa-quote-left"></i></div><h3>Inspire</h3><p>Gain wisdom through meaningful quotes</p></div>
-                        <div class="step"><div class="step-number"><i class="fas fa-tree"></i></div><h3>Experience</h3><p>Engage with powerful life stories</p></div>
+                        <div class="step"><div class="step-number"><i class="fas fa-tree"></i></div><h3>Experience</h3><p>Gain wisdom through meaningful quotes</p></div>
+                        <div class="step"><div class="step-number"><i class="fas fa-quote-left"></i></div><h3>Inspire</h3><p>Engage with powerful life stories</p></div>
                         <div class="step"><div class="step-number"><i class="fas fa-lightbulb"></i></div><h3>Reflection</h3><p>Ponder on thought provoking insights</p></div>
                         <div class="step"><div class="step-number"><i class="fas fa-pen-alt"></i></div><h3>Answer</h3><p>Respond to deep journal prompts</p></div>
                         <div class="step"><div class="step-number"><i class="fas fa-clapperboard"></i></div><h3>Action</h3><p>Take action and grow at your own pace</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-author" class="content-section">
+            <div class="container">
+                 <!-- The h2 title is now inside the author-text div for better layout control -->
+                <div class="author-box">
+                    <div class="author-content">
+                        <div class="author-image-wrapper">
+                            <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1761590183/image_2025-10-27_183603574_yxngjg.png" alt="Kerry Huggett" class="author-photo">
+                        </div>
+                        <div class="author-text">
+                            <h2>About Me</h2>
+                            <p>Hi, I’m Adam Bell. I’ve always been deeply fascinated by the journey of personal growth, having spent the last 30 years helping people, teams, and organisations develop themselves both in the private and non-profit sectors.
+                            </p>
+                        <br><p>As a long-term self-development student, I am passionate about building and maintaining a growth mindset, living intentionally, and consistently doing the inner work I needed to maintain a positive outlook on life, even through challenging times.
+
+                            My journey has helped me change for the better. I have greater resiliency, deeper focus, stronger determination, and greater faith and confidence than I have ever had.
+                            </p>
+
+                        <br><p>So, as a way to help everyday people like myself, to create their own lasting change, I created MasterMinds: The Ultimate Mindset Transformation Journal as a way to make the timeless wisdom from a unique collection of truly inspiring individuals, accessible, practical, affordable, personal, and actionable - no hype, no shortcuts, just meaningful, sustainable, real-world growth.
+
+                            When I’m not working on my passion, I work in healthcare and love nothing more than spending quality time with my family, simply doing my best every day to live by the principles I’m sharing with you through this unique guided journal.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -743,34 +784,6 @@
                         <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755950624/True_Grit_Mini_Journal_1_3_urky7e.png" alt="Steady Strength Mini Journal" class="mini-journal-image">
                         <button onclick="document.getElementById('brevo-modal-strength').style.display='flex'" class="download-button">Download</button>
                         <p>Build confidence through discipline, gratitude, and self-worth</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Author Section - REPLACED CONTENT -->
-        <section id="about-author" class="content-section">
-            <div class="container">
-                 <!-- The h2 title is now inside the author-text div for better layout control -->
-                <div class="author-box">
-                    <div class="author-content">
-                        <div class="author-image-wrapper">
-                            <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1760873340/image_2025-10-18_164218970_skzzae.png" alt="Kerry Huggett" class="author-photo">
-                        </div>
-                        <div class="author-text">
-                            <h2>About Me</h2>
-                            <p>Hi, I’m Adam Bell. I’ve always been deeply fascinated by the journey of personal growth, having spent the last 30 years helping people, teams, and organisations develop themselves both in the private and non-profit sectors.
-                            </p>
-                        <br><p>As a long-term self-development student, I am passionate about building and maintaining a growth mindset, living intentionally, and consistently doing the inner work I needed to maintain a positive outlook on life, even through challenging times.
-
-                            My journey has helped me change for the better. I have greater resiliency, deeper focus, stronger determination, and greater faith and confidence than I have ever had.
-                            </p>
-
-                        <br><p>So, as a way to help everyday people like myself, to create their own lasting change, I created MasterMinds: The Ultimate Mindset Transformation Journal as a way to make the timeless wisdom from a unique collection of truly inspiring individuals, accessible, practical, affordable, personal, and actionable - no hype, no shortcuts, just meaningful, sustainable, real-world growth.
-
-                            When I’m not working on my passion, I work in healthcare and love nothing more than spending quality time with my family, simply doing my best every day to live by the principles I’m sharing with you through this unique guided journal.
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>

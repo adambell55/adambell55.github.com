@@ -1,63 +1,464 @@
-<html>
-  
-  <h2>Privacy Policy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - The Master Minds Project</title>
 
-Effective Date: [Insert Date]
+    <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/djttn4xvk/image/upload/v1755853896/MM_Website_Mock_Up_1_pe7jcb.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/djttn4xvk/image/upload/v1755853896/MM_Website_Mock_Up_1_pe7jcb.png">
 
-At Masterminds, your privacy matters to us. This page explains what information we collect, why we collect it, and how we keep it safe.
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-What We Collect
+    <style>
+        /* Root CSS Variables for Theming */
+        :root {
+            --primary-purple: #3a2367;
+            --primary-gold: #FFD700;
+            --secondary-gold: #ffbe29;
+            --text-dark: #333;
+            --text-light: #555;
+            --bg-light: #ededee;
+            --bg-white: #ffffff;
+            --nav-bg: var(--secondary-gold);
+            --footer-bg: var(--primary-purple);
+            --footer-text: #ffffff;
+            --border-color: #ddd;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --shadow-strong: rgba(0, 0, 0, 0.2);
+        }
 
-When you use our journals, website, or services, we may collect:
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-Basic details like your name, email, or shipping address (when you order something).
+        html {
+            scroll-behavior: smooth;
+        }
 
-Payment info (securely handled by trusted payment providers).
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
+            box-shadow: inset 0 0 25px rgba(0,0,0,0.06);
+        }
 
-How you use our site (things like pages visited, device type, or cookies, to help us improve).
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-What you choose to share with us (feedback, journal entries submitted digitally, or messages).
+        /* Page Header (Smaller than Home Hero) */
+        .page-header {
+            height: 40vh;
+            min-height: 300px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://res.cloudinary.com/djttn4xvk/image/upload/v1755782183/photo-1506905925346-21bda4d32df4_zst8p5.avif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
 
-How We Use It
+        .page-header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--primary-gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
 
-We use this information to:
+        .page-header p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #fff;
+            font-style: italic;
+        }
 
-Get your order to you.
+        /* Navigation Banner */
+        .nav-banner {
+            width: 100%;
+            background: var(--nav-bg);
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 10px var(--shadow-light);
+        }
 
-Keep in touch with updates, tips, or offers (you can unsubscribe anytime).
+        .nav-item {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(0.8rem, 2vw, 1.1rem);
+            font-weight: 600;
+            color: var(--footer-bg);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
 
-Make our journals and website better.
+        .nav-item:hover {
+            background: var(--primary-purple);
+            transform: translateY(-2px);
+            color: var(--primary-gold);
+        }
 
-Keep everything safe and secure.
+        /* Policy Content Styles */
+        .policy-section {
+            padding: 4rem 0;
+        }
 
-Who We Share It With
+        .policy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            padding: 3rem 4rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px var(--shadow-medium);
+            border: 1px solid var(--border-color);
+        }
 
-We don’t sell your information. Ever.
-We only share it with:
+        .policy-content h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-purple);
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--secondary-gold);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
 
-Trusted services that help us run (like payment processors or delivery companies).
+        .policy-content h2:first-of-type {
+            margin-top: 0;
+        }
 
-If the law requires it.
+        .policy-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
 
-Cookies
+        .policy-content p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
 
-Like most websites, we use cookies to make things run smoothly and to understand how people use our site. You can turn them off in your browser if you prefer.
+        .policy-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
 
-Your Choices
+        .policy-content li {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
 
-You’re in control. You can:
+        .policy-content a {
+            color: var(--primary-purple);
+            text-decoration: underline;
+            font-weight: 600;
+        }
 
-Ask us what info we have about you.
+        .policy-content a:hover {
+            color: var(--primary-gold);
+            background-color: var(--primary-purple);
+            text-decoration: none;
+        }
 
-Ask us to update or delete it.
+        /* Footer */
+        .footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 3rem 0 1rem;
+        }
 
-Opt out of emails anytime by hitting “unsubscribe.”
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
 
-Kids
+        .footer-logo h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+        }
 
-Our products and services are for adults and young adults. We don’t knowingly collect info from children under 13.
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
 
-Changes
+        .footer-links a {
+            color: var(--footer-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-If we update this policy, we’ll post the new version here with the new date at the top.</h2>
+        .footer-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .footer-disclaimer {
+            margin: 2rem auto 1rem auto;
+            max-width: 900px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-disclaimer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            color: var(--footer-text);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-banner { flex-direction: column; gap: 0.5rem; padding: 1rem; }
+            .policy-container { padding: 2rem; }
+            .page-header { height: 30vh; }
+            .footer-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="page-header">
+        <h1>Privacy Policy</h1>
+        <p>The Master Minds Project</p>
+    </header>
+
+    <!-- Navigation Banner (Links back to Home) -->
+    <nav class="nav-banner">
+        <a href="index.html" class="nav-item"><i class="fas fa-home"></i> HOME</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="policy-section">
+        <div class="container">
+            <div class="policy-container policy-content">
+                <p><strong>Last updated: November 2025</strong></p>
+                
+                <p>Welcome to The MasterMinds Project (“we”, “our”, “us”).</p>
+                <p>We are committed to protecting your privacy and ensuring that your personal information is handled safely, respectfully, and transparently.</p>
+                <p>This Privacy Policy explains what data we collect, how we use it, how we protect it, and your rights.</p>
+
+                <h2>Who We Are</h2>
+                <p><strong>The MasterMinds Project</strong><br>
+                United Kingdom<br>
+                Email: <a href="mailto:hello@themastermindsproject.com">hello@themastermindsproject.com</a></p>
+                <p>We act as the “data controller” for the personal information we collect.</p>
+
+                <h2>What Information We Collect</h2>
+                <p>We only collect the information that you willingly provide or that is automatically collected through cookies or advertising tools.</p>
+                
+                <h3>Information you provide voluntarily</h3>
+                <ul>
+                    <li>First name</li>
+                    <li>Email address</li>
+                    <li>Any information provided when you respond to emails or contact us directly.</li>
+                </ul>
+
+                <h3>Information collected automatically (cookies & analytics)</h3>
+                <p>We may collect:</p>
+                <ul>
+                    <li>Log data (IP address, browser type, time on site)</li>
+                    <li>Cookies used for functionality, performance, or ads</li>
+                    <li>Advertising data from platforms such as Instagram, Pinterest, and TikTok</li>
+                </ul>
+                <p>We currently do not use advanced analytics, but this policy allows for their future use (e.g., Google Analytics, Meta Pixel, TikTok Pixel). If used, they will follow applicable laws.</p>
+
+                <h2>How We Use Your Information</h2>
+                <h3>📩 Email communication</h3>
+                <ul>
+                    <li>Sending free journal downloads</li>
+                    <li>Providing newsletters and updates</li>
+                    <li>Sharing marketing or launch information</li>
+                    <li>Delivering content related to personal development and our products</li>
+                </ul>
+
+                <h3>📣 Marketing & Advertising</h3>
+                <p>We may use your information to:</p>
+                <ul>
+                    <li>Create custom audiences for targeted advertising</li>
+                    <li>Measure ad effectiveness</li>
+                    <li>Display interests-based ads on social media</li>
+                </ul>
+                <p>Platforms may include:</p>
+                <ul>
+                    <li>Instagram</li>
+                    <li>Pinterest</li>
+                    <li>TikTok</li>
+                </ul>
+                <p>You can opt out of marketing emails at any time by clicking Unsubscribe in any email.</p>
+
+                <h3>Email Marketing Platform (Brevo)</h3>
+                <p>We use Brevo to:</p>
+                <ul>
+                    <li>Store email addresses</li>
+                    <li>Deliver email campaigns</li>
+                    <li>Automate welcome emails</li>
+                    <li>Track email performance</li>
+                </ul>
+                <p>Your data is securely stored and processed according to Brevo’s GDPR-compliant standards.</p>
+                <p>If we change email providers in the future, this policy will remain applicable to any platform offering similar services.</p>
+
+                <h2>Cookies & Tracking Technologies</h2>
+                <p>Our website may use cookies to:</p>
+                <ul>
+                    <li>Improve performance</li>
+                    <li>Support essential website functions</li>
+                    <li>Deliver personalised ads</li>
+                    <li>Track traffic and behaviour (if analytics are enabled)</li>
+                </ul>
+                <p>You can manage or disable cookies through your browser at any time.</p>
+
+                <h2>Amazon & Third-Party Links</h2>
+                <p>We may link to products sold on Amazon (e.g., our journal).</p>
+                <p>When you click these links:</p>
+                <ul>
+                    <li>Amazon may collect data through cookies</li>
+                    <li>Amazon manages its own privacy settings</li>
+                    <li>We do not receive personal data from Amazon</li>
+                </ul>
+                <p>Please review Amazon’s Privacy Policy for more details.</p>
+
+                <h2>Sharing Your Information</h2>
+                <p>We do not sell your personal data.</p>
+                <p>We may share your information only with:</p>
+                <ul>
+                    <li>Email marketing services (Brevo)</li>
+                    <li>Advertising partners (Instagram, Pinterest, TikTok)</li>
+                    <li>Analytical services (if enabled in the future)</li>
+                    <li>Service providers who help operate our website</li>
+                </ul>
+                <p>All third parties are required to protect your data and use it only for agreed purposes.</p>
+
+                <h2>How We Protect Your Data</h2>
+                <p>We use:</p>
+                <ul>
+                    <li>Secure servers</li>
+                    <li>Encrypted data transmission</li>
+                    <li>Access controls</li>
+                    <li>GDPR-compliant processing standards</li>
+                </ul>
+                <p>We only keep your data for as long as necessary for the purposes stated.</p>
+
+                <h2>Your Rights</h2>
+                <p>Depending on where you live, you may have the right to:</p>
+
+                <h3>GDPR / UK GDPR Rights</h3>
+                <ul>
+                    <li>Access your data</li>
+                    <li>Correct inaccurate data</li>
+                    <li>Request deletion (“right to be forgotten”)</li>
+                    <li>Withdraw consent</li>
+                    <li>Object to marketing</li>
+                    <li>Request a copy of your data</li>
+                    <li>Restrict or limit data processing</li>
+                </ul>
+
+                <h3>CCPA Rights (California)</h3>
+                <ul>
+                    <li>Know what personal data is collected</li>
+                    <li>Request deletion</li>
+                    <li>Opt out of data sharing for advertising</li>
+                    <li>Exercise your rights without discrimination</li>
+                </ul>
+                <p>To exercise any rights, contact: <a href="mailto:hello@themastermindsproject.com">hello@themastermindsproject.com</a></p>
+
+                <h2>Children’s Privacy</h2>
+                <p>Our website is not intended for children under 16.</p>
+                <p>We do not knowingly collect data from anyone under that age.</p>
+
+                <h2>International Transfers</h2>
+                <p>If your information is transferred outside the UK or EU (e.g., to Brevo servers), it is done under GDPR-compliant safeguards such as:</p>
+                <ul>
+                    <li>Standard Contractual Clauses (SCCs)</li>
+                    <li>Adequacy decisions</li>
+                </ul>
+
+                <h2>Updates to This Policy</h2>
+                <p>We may update this Privacy Policy occasionally.</p>
+                <p>When we do, the “Last updated” date at the top will be changed.</p>
+
+                <h2>How to Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy or wish to exercise your rights:</p>
+                <p>📩 <a href="mailto:hello@themastermindsproject.com">hello@themastermindsproject.com</a></p>
+                <p>We are happy to help.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>The Master Minds Project</h3>
+                    <p>Pathways to Personal Power</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="mailto:hello@themastermindsproject.com">Contact Us</a>
+                </div>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="footer-disclaimer">
+                <p>The content provided by The MasterMinds Project, including journals, downloads, reflections, and guidance, is for personal development and educational purposes only.</p>
+                <p>It does not provide medical, psychological, therapeutic, or financial advice. Any transformation, growth or results depend on your own effort, interpretation, mindset, and personal application.</p>
+                <p>We make no guarantees of personal outcomes. If you are experiencing mental health challenges, please seek support from a qualified professional.</p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Master Minds Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
 </html>

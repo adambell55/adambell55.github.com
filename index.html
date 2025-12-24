@@ -25,6 +25,7 @@
             --text-light: #555;
             --bg-light: #ededee;
             --bg-white: #ffffff;
+            --sect-one: #ffffff;
             --nav-bg: var(--secondary-gold);
             --footer-bg: var(--primary-purple);
             --footer-text: #ffffff;
@@ -283,11 +284,28 @@
         .footer-links a:hover {
             color: var(--primary-gold);
         }
+        
+        /* --- NEW DISCLAIMER STYLES START --- */
+        .footer-disclaimer {
+            margin: 2rem auto 1rem auto;
+            max-width: 900px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-disclaimer p {
+            margin-bottom: 0.5rem;
+        }
+        /* --- NEW DISCLAIMER STYLES END --- */
 
         .footer-bottom {
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            /* Border moved to disclaimer */
             color: var(--footer-text);
         }
 
@@ -295,7 +313,7 @@
         .journal-hero-section {
             padding-top: 5rem;
             padding-bottom: 5rem;
-            background-color: var(--bg-light);
+            background-color: var(--bg-white);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -318,7 +336,7 @@
             font-size: clamp(1.2rem, 3vw, 2rem);
             color: var(--primary-gold);
             margin-bottom: 3rem;
-            text-shadow: 1px 1px 2px var(--shadow-medium);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .journal-intro-paragraph {
@@ -332,29 +350,25 @@
             margin-right: auto;
         }
         .journal-hero-section .tagline-one-page {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: clamp(1.2rem, 3vw, 2rem);
-    color: var(--primary-gold);
-    margin-bottom: 3rem;
-    text-shadow:
-        0 0 10px rgb(0, 41, 85),
-        0 0 20px rgb(0, 123, 255),
-        0 0 30px rgba(4, 0, 255, 0.4),
-        1px 1px 2px var(--shadow-medium);
-}
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: var(--primary-gold);
+            margin-bottom: 3rem;
+            text-shadow: 3px 2px 4px var(--primary-purple);
+        }
         .journal-image-middle-container {
-            display: flex; /* MODIFIED: Use flex to align images side-by-side */
+            display: flex; 
             justify-content: center;
-            align-items: center; /* Vertically align images */
-            gap: 2rem; /* Space between the images */
-            flex-wrap: wrap; /* Allow images to stack on smaller screens */
+            align-items: center; 
+            gap: 2rem; 
+            flex-wrap: wrap; 
             margin-bottom: 3rem;
         }
 
         .journal-book-image-centered {
-            max-width: 700px; /* MODIFIED: Adjust width to fit two images */
-            min-width: 100px; /* Prevent images from becoming too small */
+            max-width: 700px; 
+            min-width: 100px; 
             height: auto;
             display: block;
             transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -437,14 +451,14 @@
             border-radius: 0;
             box-shadow: none;
             padding: 0;
-            height: 540px; /* adjust as needed for even height */
+            height: 540px; 
             overflow: hidden;
             transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             text-align: center;
         }
         .mini-journal-item p {
-            order: -1; /* Moves paragraph to top */
-            margin-bottom: 10px; /* Adjust spacing */
+            order: -1; 
+            margin-bottom: 10px; 
         }  
 
         .mini-journal-image {
@@ -489,30 +503,28 @@
        
         /* UPDATED About Author Section Styles */
         #about-author .container {
-             /* Remove the h2 from the general flow */
             text-align: center;
         }
 
         .author-box {
-            background-color: var(--bg-white);
+            background-color: var(--bg-light);
             border: 0px solid var(--contrast-border);
-            border-radius: 15px; /* Softer corners */
+            border-radius: 15px; 
             padding: 3rem 4rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-            max-width: 9000px; /* MODIFIED: Increased width for more space */
+            max-width: 9000px; 
             margin: 0 auto;
-            overflow: hidden; /* Important for containing elements */
+            overflow: hidden; 
         }
        
         .author-content {
             display: flex;
-            flex-direction: row; /* Default for desktop */
-            align-items: flex-start; /* Align items to the top */
+            flex-direction: row; 
+            align-items: flex-start; 
             gap: 3.5rem;
-            text-align: justify; /* Text aligns left */
+            text-align: justify; 
         }
 
-       
         .author-image-wrapper {
             flex-shrink: 0;
             width: 400px;
@@ -520,20 +532,17 @@
             align-self: stretch;
             overflow: hidden;
             margin-top: 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .author-photo {
             width: 100%;
             height: 100%;
             object-fit: cover;
-
-           
         }
 
         .author-text {
             flex: 1;
-            font-size: 1rem;
+            font-size: 1.2rem;
             line-height: 1.7;
             color: var(--text-light);
         }
@@ -648,7 +657,7 @@
             /* Author section responsive */
             .author-box { padding: 1.5rem; }
             .author-content { flex-direction: column; align-items: center; text-align: center; }
-            .author-image-wrapper { margin-top: 0; margin-bottom: 1rem; } /* Reset margin for stacked layout */
+            .author-image-wrapper { margin-top: 0; margin-bottom: 1rem; } 
             .author-text { text-align: center; }
 
             #how-it-works h2, #free-mini-journal h2 { padding-top: 5rem; padding-bottom: 5rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
@@ -707,7 +716,6 @@
                 <p class="tagline-one-page">One page at a time...</p>
                 <p class="journal-intro-paragraph">For those seeking a mindset reboot but feeling stuck or demotivated, this unique journal is your catalyst to gain clarity, take action, and ignite meaningful, lasting change — guided by timeless wisdom from inspirational masters of mind, body, and soul.</p>
                 <div class="journal-image-middle-container">
-                    <!-- ADDED a second image -->
                     <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1760885595/Open_Book_Mockup_lp8qbn.png" class="journal-book-image-centered">
                     <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1756069419/New_Project_3_ldhk5w.png" alt="The Ultimate Mindset Transformation Journal - Second View" class="journal-book-image-centered">
                 </div>
@@ -736,7 +744,6 @@
 
         <section id="about-author" class="content-section">
             <div class="container">
-                 <!-- The h2 title is now inside the author-text div for better layout control -->
                 <div class="author-box">
                     <div class="author-content">
                         <div class="author-image-wrapper">
@@ -800,10 +807,18 @@
                 </div>
                 <div class="footer-links">
                     <a href="privacy.html">Privacy Policy</a>
-                    <a href="cookies.html">Cookie Policy</a>
                     <a href="#contact" id="contact-us-link">Contact Us</a>
                 </div>
             </div>
+
+            <!-- ADDED DISCLAIMER SECTION -->
+            <div class="footer-disclaimer">
+                <p>The content provided by The MasterMinds Project, including journals, downloads, reflections, and guidance, is for personal development and educational purposes only.</p>
+                <p>It does not provide medical, psychological, therapeutic, or financial advice. Any transformation, growth or results depend on your own effort, interpretation, mindset, and personal application.</p>
+                <p>We make no guarantees of personal outcomes. If you are experiencing mental health challenges, please seek support from a qualified professional.</p>
+            </div>
+            <!-- END DISCLAIMER SECTION -->
+
             <div class="footer-bottom">
                 <p>&copy; 2025 The Master Minds Project. All rights reserved.</p>
             </div>
@@ -848,6 +863,57 @@
              <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFAMLxaHFRpqMRkr0lli-kmZ6Bours0zNyEEtYf2sGEx_pvb3hPNmU00zQN_T8tFD0Rvqnrsc42o7LPzhKwfvzqCBbz5x0zbJF-q70v0by8XDjOGspG39AdFxR70ca73yO0bsvOBleR0NQvcoq52T0JjD6VcN634bpVeo0Bwb9t5si9Ty-fE_bjb-EmQRAbfJUg4oeO0MmZcPC" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
         </div>
     </div>
+    <div id="cookie-banner" style="
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    z-index: 9999;
+    display: none;
+">
+    <p style="margin: 0 0 10px;">
+        We use cookies to improve your experience. You can read our
+        <a href="/cookie-policy" style="color: #ffd700; text-decoration: underline;">Cookie Policy</a>.
+    </p>
+    <button id="cookie-accept" style="
+        margin-right: 10px; padding: 8px 16px; border: none;
+        background: #4caf50; color: #fff; cursor: pointer;
+    ">Accept</button>
+    <button id="cookie-decline" style="
+        padding: 8px 16px; border: none;
+        background: #d9534f; color: #fff; cursor: pointer;
+    ">Decline</button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const banner = document.getElementById("cookie-banner");
+    
+        // Check if preference is saved
+        const preference = localStorage.getItem("cookie-consent");
+    
+        if (!preference) {
+            banner.style.display = "block";
+        }
+    
+        // Accept button
+        document.getElementById("cookie-accept").addEventListener("click", function () {
+            localStorage.setItem("cookie-consent", "accepted");
+            banner.style.display = "none";
+        });
+    
+        // Decline button
+        document.getElementById("cookie-decline").addEventListener("click", function () {
+            localStorage.setItem("cookie-consent", "declined");
+            banner.style.display = "none";
+        });
+    });
+    </script>
+    
    
     <!-- JavaScript for smooth scrolling and modal functionality -->
     <script>

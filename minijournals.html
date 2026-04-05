@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Master Minds Project - Pathways to Personal Power</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/djttn4xvk/image/upload/v1755853896/MM_Website_Mock_Up_1_pe7jcb.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/djttn4xvk/image/upload/v1755853896/MM_Website_Mock_Up_1_pe7jcb.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-purple: #3a2367;
+            --primary-gold: #FFD700;
+            --secondary-gold: #ffbe29;
+            --text-dark: #333;
+            --text-light: #555;
+            --bg-light: #ededee;
+            --bg-white: #ffffff;
+            --nav-bg: var(--secondary-gold);
+            --footer-bg: var(--primary-purple);
+            --footer-text: #ffffff;
+            --border-color: #ddd;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --shadow-strong: rgba(0, 0, 0, 0.2);
+            --button-dark-hover-bg: #5D3FD3;
+            --button-dark-hover-text: #FFF;
+            --contrast-border: #FFD700;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            background-image: url('https://res.cloudinary.com/djttn4xvk/image/upload/v1756052249/image_2025-08-24_171715893_zal7zh.png');
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-section { text-align: center; }
+
+        .company-logo {
+            max-width: 1200px;
+            width: 100%;
+            height: auto;
+            transform: scale(1.05);
+            margin-bottom: 1rem;
+            margin-left: 3rem;
+            filter: drop-shadow(2px 2px 4px var(--shadow-strong));
+            transition: transform 0.3s ease;
+        }
+
+        .company-logo:hover { transform: scale(1.09); }
+
+        /* Navigation Banner */
+        .nav-banner {
+            width: 100%;
+            background: var(--nav-bg);
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 4px 10px var(--shadow-light);
+        }
+
+        .nav-item {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(0.8rem, 2vw, 1.1rem);
+            font-weight: 600;
+            color: var(--footer-bg);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-item:hover {
+            background: var(--primary-purple);
+            transform: translateY(-2px);
+            color: var(--primary-gold);
+        }
+
+        /* Mini Journal Section */
+        .content-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
+            position: relative;
+        }
+
+        #free-mini-journal {
+            padding-top: 4 !important;
+        }
+
+        #free-mini-journal h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            color: var(--bg-white);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            margin-bottom: 4rem;
+            padding-top: 9rem;
+            padding-bottom: 9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .section-intro {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .mini-journals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        .mini-journal-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 0;
+            height: 540px;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-align: center;
+        }
+
+        .mini-journal-item p {
+            order: -1;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .mini-journal-image {
+            width: 100%;
+            max-width: 750px;
+            height: auto;
+            display: block;
+        }
+
+        .mini-journal-item .download-button {
+            position: absolute;
+            bottom: 28%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-purple);
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            z-index: 2;
+            box-shadow: 0 4px 10px var(--shadow-strong);
+            text-decoration: none;
+        }
+
+        .mini-journal-item .download-button:hover {
+            background: var(--button-dark-hover-bg);
+            color: var(--button-dark-hover-text);
+            border-color: var(--button-dark-hover-text);
+            box-shadow: 0 6px 15px var(--shadow-strong);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-logo h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--footer-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover { color: var(--primary-gold); }
+
+        .footer-disclaimer {
+            margin: 2rem auto 1rem auto;
+            max-width: 1200px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-disclaimer p { margin-bottom: 0.5rem; }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            color: var(--footer-text);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--bg-white);
+            margin: auto;
+            padding: 2.5rem;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px var(--shadow-strong);
+            position: relative;
+            text-align: center;
+            color: var(--text-dark);
+            animation: fadeInScale 0.3s ease-out forwards;
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-content h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-purple);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .modal-content .contact-email a {
+            color: var(--primary-gold);
+            font-weight: 600;
+            text-decoration: underline;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .modal-content .contact-email a:hover { color: var(--primary-purple); }
+
+        .close-button {
+            color: var(--text-dark);
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover { color: var(--primary-purple); }
+
+        .brevo-iframe-container {
+            position: relative;
+            width: 100%;
+            max-width: 540px;
+            height: 420px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        /* Cookie Banner */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
+            z-index: 9999;
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-banner { flex-direction: column; gap: 1rem; padding-bottom: 1.5rem; }
+            .mini-journals-grid { grid-template-columns: 1fr; }
+            .mini-journal-item { max-width: 320px; margin: 0 auto; }
+            #free-mini-journal h2 { padding-top: 5rem; padding-bottom: 5rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+            #free-mini-journal h2::before { background-position: right center; }
+        }
+
+        @media (max-width: 480px) {
+            .company-logo { max-width: 250px; margin-left: 0; }
+            .nav-item { font-size: 0.9rem; padding: 0.4rem 0.8rem; }
+            .container { padding: 0 1rem; }
+            .content-section { padding: 3rem 0; }
+            #free-mini-journal h2::before { background-position: 95% center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="logo-section">
+                <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755782363/Untitled_design__2_-removebg-preview_upscaled_2_julhfx.png" alt="The Master Minds Project Logo" class="company-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Free Mini Journal Section -->
+        <section id="free-mini-journal" class="content-section">
+            <div class="container">
+                <p class="section-intro">No hype, no fluff — just timeless wisdom and meaningful, lasting change.</p>
+                <h3 class="section-intro">PLEASE FEEL FREE TO DOWNLOAD ONE OF OUR MINI JOURNALS BELOW</h3>
+
+                <div class="mini-journals-grid">
+                    <div class="mini-journal-item">
+                        <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755950640/True_Grit_Mini_Journal_1_2_bts11t.png" alt="Inner Wealth Mini Journal" class="mini-journal-image">
+                        <button onclick="document.getElementById('brevo-modal-wealth').style.display='flex'" class="download-button">Download</button>
+                        <p>Activate abundance, align your beliefs and train your subconscious</p>
+                    </div>
+                    <div class="mini-journal-item">
+                        <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755950608/True_Grit_Mini_Journal_1_4_dyozo7.png" alt="True Grit Mini Journal" class="mini-journal-image">
+                        <button onclick="document.getElementById('brevo-modal-grit').style.display='flex'" class="download-button">Download</button>
+                        <p>Tap into perseverance, vision, and the lessons hidden in failure</p>
+                    </div>
+                    <div class="mini-journal-item">
+                        <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755950624/True_Grit_Mini_Journal_1_3_urky7e.png" alt="Steady Strength Mini Journal" class="mini-journal-image">
+                        <button onclick="document.getElementById('brevo-modal-strength').style.display='flex'" class="download-button">Download</button>
+                        <p>Build confidence through discipline, gratitude, and self-worth</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>The Master Minds Project</h3>
+                    <p>Pathways to Personal Power</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="cookies.html">Cookie Policy</a>
+                    <a href="#contact" id="contact-us-link-footer">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Master Minds Project. All rights reserved.</p>
+            </div>
+            <div class="footer-disclaimer">
+                <p>The content provided by The MasterMinds Project, including journals, downloads, reflections, and guidance, is for personal development and educational purposes only.</p>
+                <p>It does not provide medical, psychological, therapeutic, or financial advice. Any transformation, growth or results depend on your own effort, interpretation, mindset, and personal application.</p>
+                <p>We make no guarantees of personal outcomes. If you are experiencing mental health challenges, please seek support from a qualified professional.</p>
+                <p>No part of this website, its journals, downloadable content, graphics, or written material may be reproduced, distributed, or transmitted in any form or by any means without prior written permission, except for brief quotations used in reviews or articles. Unauthorised use or reproduction may result in legal action.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-modal">&times;</span>
+            <h3>Contact Us</h3>
+            <p>For enquiries, please reach out to us at:</p>
+            <p class="contact-email">
+                <a href="mailto:hello@themastermindsproject.com">hello@themastermindsproject.com</a>
+            </p>
+            <p>We look forward to hearing from you!</p>
+        </div>
+    </div>
+
+    <!-- Brevo Form Modals -->
+
+    <!-- Modal 1: Inner Wealth -->
+    <div id="brevo-modal-wealth" class="modal">
+        <div class="brevo-iframe-container">
+            <span onclick="document.getElementById('brevo-modal-wealth').style.display='none'" style="position:absolute; top:-15px; right:-15px; cursor:pointer; font-size:35px; color:white; line-height:1; z-index:1001; text-shadow: 0 0 5px black;">&times;</span>
+            <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFAHDcBhfT52nQEsbnts5umj_UgMulAdcJzUCL1JNIrVD_0N_LHykwN8ZQ0LGvNPGg8bTE4E3i9jIAVh8zeWIYYyXXapbaZZRFtrCUcxSXSNoQvUywfhhpABLCIVXcqtS40uur5vXW2DczAF0r6xaXtZM9nRQ-95aImj637kRi-ortOaqe8h1sFDMwcT-pNxVVZHVViPfSoXqA" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
+        </div>
+    </div>
+
+    <!-- Modal 2: True Grit -->
+    <div id="brevo-modal-grit" class="modal">
+        <div class="brevo-iframe-container">
+            <span onclick="document.getElementById('brevo-modal-grit').style.display='none'" style="position:absolute; top:-15px; right:-15px; cursor:pointer; font-size:35px; color:white; line-height:1; z-index:1001; text-shadow: 0 0 5px black;">&times;</span>
+            <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFANuCzBzTy_5qkkwxy4EpDCFYrTCrAzq3W-7xCxuqQjpy-a1Kp8a_L0T9LmTRa9JjXqWp-YmQeyE-rZxq_2CaIFjLeYqxlYtcJjbHBVDpRp1GOx_fDsoM08mP4P5fLX4Nq1WdcsEFTGDta9I0-sP0KGNj99ZX0ar-E2cX4JrFge0fIcRuYJFkyF-X4APl84zsZc90MULTflf7" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
+        </div>
+    </div>
+
+    <!-- Modal 3: Steady Strength -->
+    <div id="brevo-modal-strength" class="modal">
+        <div class="brevo-iframe-container">
+            <span onclick="document.getElementById('brevo-modal-strength').style.display='none'" style="position:absolute; top:-15px; right:-15px; cursor:pointer; font-size:35px; color:white; line-height:1; z-index:1001; text-shadow: 0 0 5px black;">&times;</span>
+            <iframe width="100%" height="100%" src="https://e7cafb8b.sibforms.com/serve/MUIFAMLxaHFRpqMRkr0lli-kmZ6Bours0zNyEEtYf2sGEx_pvb3hPNmU00zQN_T8tFD0Rvqnrsc42o7LPzhKwfvzqCBbz5x0zbJF-q70v0by8XDjOGspG39AdFxR70ca73yO0bsvOBleR0NQvcoq52T0JjD6VcN634bpVeo0Bwb9t5si9Ty-fE_bjb-EmQRAbfJUg4oeO0MmZcPC" frameborder="0" scrolling="auto" allowfullscreen style="display: block; border: none; border-radius: 10px;"></iframe>
+        </div>
+    </div>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner">
+        <p style="margin: 0 0 10px;">
+            We use cookies to improve your experience. You can read our
+            <a href="/cookie-policy" style="color: #ffd700; text-decoration: underline;">Cookie Policy</a>.
+        </p>
+        <button id="cookie-accept" style="margin-right: 10px; padding: 8px 16px; border: none; background: #4caf50; color: #fff; cursor: pointer;">Accept</button>
+        <button id="cookie-decline" style="padding: 8px 16px; border: none; background: #d9534f; color: #fff; cursor: pointer;">Decline</button>
+    </div>
+
+    <script>
+        // Cookie banner
+        document.addEventListener("DOMContentLoaded", function () {
+            const banner = document.getElementById("cookie-banner");
+            if (!localStorage.getItem("cookie-consent")) {
+                banner.style.display = "block";
+            }
+            document.getElementById("cookie-accept").addEventListener("click", function () {
+                localStorage.setItem("cookie-consent", "accepted");
+                banner.style.display = "none";
+            });
+            document.getElementById("cookie-decline").addEventListener("click", function () {
+                localStorage.setItem("cookie-consent", "declined");
+                banner.style.display = "none";
+            });
+        });
+
+        // Hero background image
+        document.querySelector('.hero').style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://res.cloudinary.com/djttn4xvk/image/upload/v1756052249/image_2025-08-24_171715893_zal7zh.png')";
+
+        // Contact modal
+        const contactModal = document.getElementById('contact-modal');
+        const closeModalButton = document.getElementById('close-modal');
+
+        document.getElementById('contact-us-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            contactModal.style.display = 'flex';
+        });
+
+        document.getElementById('contact-us-link-footer').addEventListener('click', function(e) {
+            e.preventDefault();
+            contactModal.style.display = 'flex';
+        });
+
+        closeModalButton.addEventListener('click', function() {
+            contactModal.style.display = 'none';
+        });
+
+        // Close modals on background click
+        const brevoModalWealth = document.getElementById('brevo-modal-wealth');
+        const brevoModalGrit = document.getElementById('brevo-modal-grit');
+        const brevoModalStrength = document.getElementById('brevo-modal-strength');
+
+        window.addEventListener('click', function(event) {
+            if (event.target === contactModal) contactModal.style.display = 'none';
+            if (event.target === brevoModalWealth) brevoModalWealth.style.display = 'none';
+            if (event.target === brevoModalGrit) brevoModalGrit.style.display = 'none';
+            if (event.target === brevoModalStrength) brevoModalStrength.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

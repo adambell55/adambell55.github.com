@@ -90,17 +90,21 @@
         }
 
         .logo-section {
-            text-align: center;
+            position: absolute;
+            top: 5px;   /* Distance from the top */
+            left: 20px;  /* Distance from the left */
+            text-align: left;
+            z-index: 100; /* Ensures it stays above other elements */
         }
 
         .company-logo {
-            max-width: 1200px;
-            max-height: 1200px;
+            max-width: 550px;
+            max-height: 550px;
             width: 100%;
             height: auto;
             transform: scale(1.05);
             margin-bottom: 1rem;
-            margin-left: 3rem;
+            margin-left: 0;
             filter: drop-shadow(2px 2px 4px var(--shadow-strong));
             transition: transform 0.3s ease;
         }
@@ -735,7 +739,7 @@
             <a href="#journal" class="nav-item">THE JOURNAL</a>
             <a href="#how-it-works" class="nav-item">HOW IT WORKS</a>
             <a href="#about-author" class="nav-item">ABOUT THE AUTHOR</a>
-            <a href="minijournals.html" class="nav-item">FREE MINI JOURNAL</a>
+            <a href="minijournals.html" class="nav-item" target="_blank">FREE MINI JOURNAL</a>
 
         </nav>
     </section>

@@ -92,26 +92,27 @@
 
         .logo-section {
             position: absolute;
-            top: 5px;
-            left: 20px;
-            text-align: left;
+            top: 50%;
+            left: 30%; /* tweak this value to move right/left */
+            transform: translate(-50%, -50%);
+            text-align: center;
             z-index: 100;
-        }
+}
 
         .company-logo {
-            max-width: 550px;
-            max-height: 550px;
+            max-width: 750px;
+            max-height: 750px;
             width: 100%;
             height: auto;
-            transform: scale(1.05);
+            transform: scale(1.02);
             margin-bottom: 1rem;
-            margin-left: 0;
+            margin-left: 5;
             filter: drop-shadow(2px 2px 4px var(--shadow-strong));
-            transition: transform 0.3s ease;
+            transition: transform 0.1s ease;
         }
 
         .company-logo:hover {
-            transform: scale(1.09);
+            transform: scale(1.05);
         }
 
         /* Navigation Banner */
@@ -837,6 +838,7 @@
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="cookies.html">Cookie Policy</a>
                     <a href="#contact" id="contact-us-link">Contact Us</a>
+                    <a href="https://1babybloo1.github.io"> Made by babybloo</a>
                 </div>
             </div>
 
@@ -951,7 +953,7 @@
             const heroSection = document.querySelector('.hero');
             heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${imageUrl}')`;
         }
-        changeBackgroundImage('MASTERBACKROUND.jpg');
+        changeBackgroundImage('MASTERMINDS.jpg');
 
         // Modal Logic
         const contactUsLink = document.getElementById('contact-us-link');

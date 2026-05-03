@@ -59,26 +59,25 @@
             background-attachment: fixed;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;   /* changed: push content to top */
+            justify-content: flex-start;
             align-items: flex-start;
             color: white;
             position: relative;
         }
 
-        /* CHANGE 1 — logo shrunk to ~half size, positioned top-left corner */
         .hero-content {
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
-            padding: 1.5rem 2rem 0;        /* top-left padding */
+            padding: 1.5rem 2rem 0;
             width: 100%;
         }
 
         .logo-section { text-align: left; }
 
         .company-logo {
-            max-width: 420px;              /* was ~900px effective; now ~half */
-            width: 28vw;                   /* scales down on smaller screens */
+            max-width: 420px;
+            width: 28vw;
             min-width: 180px;
             height: auto;
             filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.4));
@@ -87,10 +86,9 @@
 
         .company-logo:hover { transform: scale(1.04); }
 
-        /* CHANGE 2 — hero banner text in lower half */
         .hero-lower-text {
             position: absolute;
-            bottom: 13%;                   /* sits in the lower-centre area */
+            bottom: 13%;
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
@@ -100,7 +98,8 @@
 
         .hero-banner-title {
             font-family: 'Cinzel', serif;
-            font-size: clamp(1.6rem, 4vw, 3.2rem);
+            /* CHANGE 3: increased from clamp(1.6rem, 4vw, 3.2rem) */
+            font-size: clamp(1.9rem, 4.5vw, 3.8rem);
             font-weight: 700;
             letter-spacing: 0.04em;
             color: var(--bg-white);
@@ -143,7 +142,8 @@
 
         .nav-item {
             font-family: 'Cinzel', serif;
-            font-size: clamp(0.8rem, 2vw, 1.1rem);
+            /* CHANGE 3: increased from clamp(0.8rem, 2vw, 1.1rem) */
+            font-size: clamp(0.95rem, 2.2vw, 1.25rem);
             font-weight: 600;
             color: var(--footer-bg);
             text-decoration: none;
@@ -185,11 +185,11 @@
             z-index: 1;
         }
 
-        /* CHANGE 3 — replaced intro line */
         .section-intro {
-            font-size: 1.2rem;
+            /* CHANGE 3: increased from 1.2rem */
+            font-size: 1.35rem;
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 3rem;
             color: var(--text-light);
             line-height: 1.8;
         }
@@ -200,7 +200,7 @@
             gap: 2.5rem;
             justify-content: center;
             max-width: 1000px;
-            margin: 3rem auto;
+            margin: 6rem auto;
             padding: 0 1rem;
         }
 
@@ -223,6 +223,8 @@
             order: -1;
             margin-bottom: 10px;
             color: var(--text-light);
+            /* CHANGE 3: increased from default/inherited */
+            font-size: 1.1rem;
         }
 
         .mini-journal-image {
@@ -242,7 +244,8 @@
             border: 2px solid var(--primary-gold);
             padding: 0.7rem 1.5rem;
             border-radius: 5px;
-            font-size: 0.95rem;
+            /* CHANGE 3: increased from 0.95rem */
+            font-size: 1.05rem;
             font-weight: 600;
             text-transform: uppercase;
             cursor: pointer;
@@ -260,7 +263,6 @@
             box-shadow: 0 6px 15px var(--shadow-strong);
         }
 
-        /* CHANGE 4 & 5 — post-grid content */
         .post-grid-section {
             text-align: center;
             padding: 0 1rem 4rem;
@@ -269,7 +271,8 @@
         }
 
         .resonates-line {
-            font-size: 1.15rem;
+            /* CHANGE 3: increased from 1.15rem */
+            font-size: 1.3rem;
             color: var(--text-light);
             font-style: italic;
             margin-bottom: 3rem;
@@ -285,14 +288,16 @@
 
         .deeper-heading {
             font-family: 'Cinzel', serif;
-            font-size: 1.4rem;
+            /* CHANGE 3: increased from 1.4rem */
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--primary-purple);
             letter-spacing: 0.03em;
         }
 
         .deeper-sub {
-            font-size: 1.1rem;
+            /* CHANGE 3: increased from 1.1rem */
+            font-size: 1.25rem;
             color: var(--text-light);
             margin-bottom: 1rem;
         }
@@ -305,7 +310,8 @@
             padding: 1rem 2.5rem;
             border-radius: 8px;
             font-family: 'Cinzel', serif;
-            font-size: 1rem;
+            /* CHANGE 3: increased from 1rem */
+            font-size: 1.15rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -342,9 +348,15 @@
 
         .footer-logo h3 {
             font-family: 'Cinzel', serif;
-            font-size: 1.6rem;
+            /* CHANGE 3: increased from 1.6rem */
+            font-size: 1.85rem;
             color: var(--primary-gold);
             margin-bottom: 0.5rem;
+        }
+
+        .footer-logo p {
+            /* CHANGE 3: explicit size increase */
+            font-size: 1.05rem;
         }
 
         .footer-links {
@@ -357,6 +369,8 @@
             color: var(--footer-text);
             text-decoration: none;
             transition: color 0.3s ease;
+            /* CHANGE 3: increased footer link size */
+            font-size: 1.05rem;
         }
 
         .footer-links a:hover { color: var(--primary-gold); }
@@ -365,7 +379,8 @@
             margin: 2rem auto 1rem auto;
             max-width: 1200px;
             text-align: center;
-            font-size: 0.8rem;
+            /* CHANGE 3: increased from 0.8rem */
+            font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.7);
             line-height: 1.6;
             padding-top: 2rem;
@@ -378,6 +393,8 @@
             text-align: center;
             padding-top: 1rem;
             color: var(--footer-text);
+            /* CHANGE 3: explicit size */
+            font-size: 1rem;
         }
 
         /* Modal Styles */
@@ -465,7 +482,8 @@
             color: #fff;
             padding: 15px;
             text-align: center;
-            font-size: 14px;
+            /* CHANGE 3: increased from 14px */
+            font-size: 16px;
             z-index: 9999;
             display: none;
         }
@@ -473,7 +491,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .company-logo { width: 45vw; min-width: 140px; }
-            .hero-banner-title { font-size: clamp(1.3rem, 5vw, 2rem); }
+            .hero-banner-title { font-size: clamp(1.5rem, 5vw, 2.2rem); }
             .mini-journals-grid { grid-template-columns: 1fr; }
             .mini-journal-item { max-width: 320px; margin: 0 auto; }
             #free-mini-journal h2 { padding-top: 5rem; padding-bottom: 5rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
@@ -481,7 +499,7 @@
 
         @media (max-width: 480px) {
             .company-logo { width: 55vw; }
-            .nav-item { font-size: 0.9rem; padding: 0.4rem 0.8rem; }
+            .nav-item { font-size: 0.95rem; padding: 0.4rem 0.8rem; }
             .container { padding: 0 1rem; }
             .content-section { padding: 3rem 0; }
         }
@@ -492,16 +510,14 @@
     <!-- Hero Section -->
     <section class="hero" id="hero">
 
-        <!-- CHANGE 1: Logo — small, top-left corner -->
         <div class="hero-content">
             <div class="logo-section">
-                <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755782363/Untitled_design__2_-removebg-preview_upscaled_2_julhfx.png"
+                <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1775645114/Untitled_design_1_ym22wb.png"
                      alt="The Master Minds Project Logo"
                      class="company-logo">
             </div>
         </div>
 
-        <!-- CHANGE 2: Banner text + scroll arrow in lower half -->
         <div class="hero-lower-text">
             <p class="hero-banner-title">Download Your Free MasterMinds Mini Journal</p>
             <div class="scroll-arrow">
@@ -516,38 +532,35 @@
         <section id="free-mini-journal" class="content-section">
             <div class="container">
 
-                <!-- CHANGE 3: Replaced 'no fluff...' line -->
                 <p class="section-intro">Build discipline, confidence and clarity through guided reflection</p>
                 <h3 class="section-intro">PLEASE FEEL FREE TO DOWNLOAD ONE OF OUR MINI JOURNALS BELOW</h3>
 
                 <div class="mini-journals-grid">
                     <div class="mini-journal-item">
-                        <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755950640/True_Grit_Mini_Journal_1_2_bts11t.png" alt="Inner Wealth Mini Journal" class="mini-journal-image">
+                        <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1777482539/image_2026-04-29_180814173_qlo05g.png" alt="Inner Wealth Mini Journal" class="mini-journal-image">
                         <button onclick="document.getElementById('brevo-modal-wealth').style.display='flex'" class="download-button">Download</button>
                         <p>Activate abundance, align your beliefs and train your subconscious</p>
                     </div>
                     <div class="mini-journal-item">
-                        <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755950608/True_Grit_Mini_Journal_1_4_dyozo7.png" alt="True Grit Mini Journal" class="mini-journal-image">
+                        <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1777482487/image_2026-04-29_180721542_zm9wsz.png" alt="True Grit Mini Journal" class="mini-journal-image">
                         <button onclick="document.getElementById('brevo-modal-grit').style.display='flex'" class="download-button">Download</button>
                         <p>Tap into perseverance, vision, and the lessons hidden in failure</p>
                     </div>
                     <div class="mini-journal-item">
-                        <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1755950624/True_Grit_Mini_Journal_1_3_urky7e.png" alt="Steady Strength Mini Journal" class="mini-journal-image">
+                        <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1777482620/image_2026-04-29_180845309_eqf7o5.png" alt="Steady Strength Mini Journal" class="mini-journal-image">
                         <button onclick="document.getElementById('brevo-modal-strength').style.display='flex'" class="download-button">Download</button>
                         <p>Build confidence through discipline, gratitude, and self-worth</p>
                     </div>
                 </div>
 
-                <!-- CHANGE 4 & 5: Post-grid content -->
                 <div class="post-grid-section">
-                    <!-- Change 4 -->
-                    <p class="resonates-line">Start with the one that resonates most — come back to the others anytime.</p>
+                    <p class="resonates-line">Start with one that resonates most with you - come back to the others anytime</p>
 
-                    <!-- Change 5 -->
                     <div class="deeper-block">
                         <p class="deeper-heading">Ready to go deeper?</p>
                         <p class="deeper-sub">Explore the full MasterMinds journal experience</p>
-                        <a href="index.html" class="explore-button">Explore the Full Journal</a>
+                        <!-- CHANGE 1: added target="_blank" rel="noopener noreferrer" -->
+                        <a href="index.html" class="explore-button" target="_blank" rel="noopener noreferrer">Explore the Full Journal</a>
                     </div>
                 </div>
 
@@ -560,17 +573,18 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h3>The Master Minds Project</h3>
+                    <!-- CHANGE 2: "The Master Minds Project" → "The MasterMinds Project" -->
+                    <h3>The MasterMinds Project</h3>
                     <p>Pathways to Personal Power</p>
                 </div>
                 <div class="footer-links">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="cookies.html">Cookie Policy</a>
-                    <a href="#contact" id="contact-us-link-footer">Contact Us</a>
+                    <a href="privacy.html" target="_blank">Privacy Policy</a>
+                    <a href="cookies.html" target="_blank">Cookie Policy</a>
+                    <a href="#contact" id="contact-us-link-footer" target="_blank">Contact Us</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 The Master Minds Project. All rights reserved.</p>
+                <p>&copy; 2026 The MasterMinds Project. All rights reserved.</p>
             </div>
             <div class="footer-disclaimer">
                 <p>The content provided by The MasterMinds Project, including journals, downloads, reflections, and guidance, is for personal development and educational purposes only.</p>

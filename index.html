@@ -583,12 +583,14 @@
 
         .author-image-wrapper {
             flex-shrink: 0;
-            width: 400px;
+            width: 100%;          /* Allows it to be smaller than 400px if needed */
+            max-width: 400px;     /* Keeps it at 400px on desktop */
+            aspect-ratio: 4 / 5;  /* Adjust this (e.g., 1/1 for square) to fit your photo shape */
             border-radius: 50px;
-            align-self: stretch;
+            align-self: flex-start; /* Prevents it from stretching vertically */
             overflow: hidden;
             margin-top: 0;
-        }
+}
 
         .author-photo {
             width: 100%;
@@ -702,7 +704,7 @@
         }
 
         @media (max-width: 768px) {
-            .hero {background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://res.cloudinary.com/djttn4xvk/image/upload/v1778252016/masetrimage_926137.png') !important; background-attachment: scroll !important; } 
+            .hero {background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://res.cloudinary.com/djttn4xvk/image/upload/v1778249273/MASTERMINDS_nchvil.png') !important; background-attachment: scroll !important; } 
             .nav-banner { flex-direction: column; gap: 1rem; padding-bottom: 1.5rem; }
             .journal-book-image-centered { max-width: 550px; transform: translateY(0) !important; filter: none !important; }
             .journal-book-image-centered:hover { transform: translateY(0); }
@@ -713,15 +715,16 @@
             .mini-journal-item:hover { transform: translateY(-10px); animation: none; box-shadow: 0 10px 30px var(--shadow-medium); }
             .author-box { padding: 1.5rem; }
             .author-content { flex-direction: column; align-items: center; text-align: center; }
-            .author-image-wrapper { margin-top: 0; margin-bottom: 1rem; }
+            .author-image-wrapper { width: 100%; max-width: 300px; margin: 0 auto 1.5rem auto; aspect-ratio: 4 / 5;  }
             .author-text { text-align: center; }
+            .author-photo {width: 100%; height: 100%; object-fit: cover; }
             #how-it-works h2, #free-mini-journal h2 { padding-top: 5rem; padding-bottom: 5rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
             #free-mini-journal h2::before { background-position: right center; }
             .launch-banner { font-size: 0.75rem; padding: 0.7rem 1.2rem; white-space: normal; max-width: 160px; }
         }
 
         @media (max-width: 480px) {
-            .hero {background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://res.cloudinary.com/djttn4xvk/image/upload/v1778252016/masetrimage_926137.png') !important; background-attachment: scroll !important; } 
+            .hero { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://res.cloudinary.com/djttn4xvk/image/upload/v1778252016/masetrimage_926137.png') !important; background-attachment: scroll !important; }
             .company-logo { max-width: 250px; margin-left: 0; }
             .nav-item { font-size: 0.9rem; padding: 0.4rem 0.8rem; }
             .journal-book-image-centered { max-width: 200px; }

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="p:domain_verify" content="f82ba1e40d791d38381e1a148cba75ea"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Master Minds Project - Pathways to Personal Power</title>
@@ -403,56 +402,34 @@
         }
 
         /* ── Launch date banner ── */
-        .launch-banner {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--upcomingbanner);
-            color: var(--primary-purple);
-            border: 3px solid var(--primary-purple);
-            padding: 1rem 2.2rem;
-            min-width: 500px;
-            border-radius: 8px;
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1.2rem, 2vw, 2rem);
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-align: center;
-            white-space: nowrap;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-            z-index: 10;
-            text-transform: uppercase;
-            line-height: 1.5;
-            pointer-events: none;
-        }
 
-        .launch-banner .launch-label {
-            font-size: 1em;
-            letter-spacing: 0.15em;
-            margin-bottom: 0.2rem;
-            opacity: 1;
-            display: block;
-            color: var(--primary-purple);
-        }
 
         /* ── Greyed-out Order Now button ── */
         .order-now-button-centered {
-            background: #999;
-            color: #ccc;
-            border: 2px solid #bbb;
+            background: var(--primary-purple);
+            color: var(--primary-gold);
+            border: 2px solid var(--contrast-border);
             padding: 1.2rem 3rem;
             border-radius: 8px;
             font-size: 1.2rem;
             font-weight: 700;
             text-transform: uppercase;
-            cursor: not-allowed;
+            cursor: pointer;
+            transition: all 0.3s ease;
             letter-spacing: 0.08em;
-            box-shadow: none;
+            box-shadow: 0 5px 15px var(--shadow-medium);
             margin-top: 1rem;
-            opacity: 0.5;
-            filter: grayscale(100%);
-            pointer-events: none;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .order-now-button-centered:hover {
+            background: var(--button-dark-hover-bg);
+            color: var(--button-dark-hover-text);
+            border-color: var(--button-dark-hover-text);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--shadow-strong);
         }
 
         /* Mini Journal Grid Styles */
@@ -780,17 +757,12 @@
                 <div class="journal-image-middle-container">
                     <img src="https://res.cloudinary.com/djttn4xvk/image/upload/v1777896530/New_Project_kp5iox.png" class="journal-book-image-centered" alt="The Ultimate Mindset Transformation Journal - Open">
 
-                    <div class="launch-banner">
-                        <span class="launch-label">Launch Date</span>
-                        Sunday 24th May 2026
-                    </div>
-
-
                 </div>
-
-                <!-- Greyed-out Order Now button -->
-                <button class="order-now-button-centered" disabled>ORDER NOW</button>
-            </div>
+                <a href="https://geni.us/I4shr1H"
+                class="order-now-button-centered"
+                target="_blank">
+                ORDER NOW
+             </a>
         </section>
 
         <!-- How It Works Section -->
